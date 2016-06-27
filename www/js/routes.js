@@ -7,59 +7,59 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
+
+
 
       .state('login', {
-    url: '/page2',
+    url: '/loginpage',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
 
   .state('signup', {
-    url: '/page3',
+    url: '/signuppage',
     templateUrl: 'templates/signup.html',
     controller: 'signupCtrl'
   })
 
   .state('menu', {
-    url: '/page4',
+    url: '/menupage',
     templateUrl: 'templates/menu.html',
     controller: 'menuCtrl'
   })
 
   .state('profile', {
-    url: '/page5',
+    url: '/profilepage',
     templateUrl: 'templates/profile.html',
     controller: 'profileCtrl'
   })
 
   .state('signup2', {
-    url: '/page6',
+    url: '/signup2page',
     templateUrl: 'templates/signup2.html',
     controller: 'signup2Ctrl'
   })
 
   .state('signup3', {
-    url: '/page8',
+    url: '/signup3page',
     templateUrl: 'templates/signup3.html',
     controller: 'signup3Ctrl'
   })
 
   .state('setting', {
-    url: '/page9',
+    url: '/settingpage',
     templateUrl: 'templates/setting.html',
     controller: 'settingCtrl'
   })
 
   .state('kegiatan', {
-    url: '/page10',
+    url: '/kegiatanpage',
     templateUrl: 'templates/kegiatan.html',
     controller: 'kegiatanCtrl'
   })
 
-$urlRouterProvider.otherwise('/page2')
+$urlRouterProvider.otherwise('/loginpage')
 
-  
+
 
 });

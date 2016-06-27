@@ -1,16 +1,22 @@
-<ion-view title="Signup" id="page3" class=" ">
-    <ion-content padding="true" class="has-header">
-        <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
+<ion-view hide-nav-bar="true" title="Signup" id="signuppage" class=" ">
+    <ion-content padding="true" class="">
+      <div style="height:70%; background-color:yellow;">
+
         <form id="signup-form2" class="list ">
+          <div>
+            <div style="display:inline-block; margin: 0px; width:100px; line-height: 100px; text-align: center; background-color:#F4F6F6 ;" class="round">
+                <i class="icon ion-person" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div>
+            <div style="display:inline-block">Profile photo</div>
+          </div>
+          <div style="display:block">
             <ion-list id="signup-list2" class=" ">
                 <label class="item item-input " id="signup-input3">
-                    <span class="input-label">Name</span>
+                    <span class="input-label">First Name</span>
                     <input type="text" placeholder="">
                 </label>
                 <label class="item item-input " id="signup-input4">
-                    <span class="input-label">Username</span>
+                    <span class="input-label">Last Name</span>
                     <input type="text" placeholder="">
                 </label>
             </ion-list>
@@ -19,7 +25,10 @@
                 <button id="signup-button6" class=" button button-positive  button-block ">2</button>
                 <button id="signup-button7" class=" button button-positive  button-block ">3</button>
             </div>
-            <a ui-sref="signup2" id="signup-button4" class=" button button-assertive  button-block ">next</a>
+          </div>
         </form>
+        <!-- <a ui-sref="signup2" id="signup-button4" class=" button button-assertive  button-block round">next</a> -->
+        <button ui-sref="signup2" id="signupnext" class="round brbutton">next</button>
+      </div>
     </ion-content>
 </ion-view>
