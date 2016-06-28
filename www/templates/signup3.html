@@ -1,24 +1,32 @@
 <ion-view hide-nav-bar="true" title="Signup3" id="signup3page" class=" ">
-    <ion-content padding="true" class="has-header">
-        <form id="signup3-form5" class="list ">
-            <ion-list id="signup3-list8" class=" ">
-                <label class="item item-input " id="signup3-input10">
-                    <span class="input-label">Email</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input " id="signup3-input11">
-                    <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input " id="signup3-input12">
-                    <span class="input-label">Password</span>
-                    <input type="text" placeholder="">
-                </label>
-            </ion-list>
-            <div id="signup3-button-bar3" class=" button-bar ">
+    <ion-content padding="true" class="">
+      <div style="width:240px; margin:10px auto; ">
+        <img src="img/brmini.png" width="40px" height="40px" style="display: inline;">
+        <span style="font-size:30px; display:inline" class="cgf"> REGISTRASI </span>
+      </div>
+        <form id="su3form" class="list ">
+          <ion-list id="su3list" class=" ">
+              <span class="input-label">Email</span>
+              <label class="item item-input " id="su3email">
+                  <input type="email" placeholder="">
+              </label>
+              <span class="input-label">Password</span>
+              <label class="item item-input " id="su3pass">
+                  <input type="password" placeholder="">
+              </label>
+              <span class="input-label">Confirm Password</span>
+              <label class="item item-input " id="su3cpass">
+                  <input type="password" placeholder="">
+              </label>
+          </ion-list>
+          <div style="margin-top:30px;" class="button-bar">
+            <button style="display:inline; margin-left:15%" ui-sref="signup2" id="signup3back" class="round brbutton">back</button>
+            <button style="display:inline; margin-left:15%" ui-sref="login" id="signup3sign" class="round brbutton">sign-up</button>
+          </div>
+            <!-- <div id="signup3-button-bar3" class=" button-bar ">
                 <a ui-sref="signup2" id="signup3-button13" class=" button button-assertive  button-block ">back</a>
                 <a ui-sref="login" id="signup3-button15" class=" button button-assertive  button-block ">sign-up</a>
-            </div>
+            </div> -->
         </form>
     </ion-content>
 </ion-view>
