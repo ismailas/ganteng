@@ -10,12 +10,26 @@
   color:white;
   font-size: 20px;
   font-weight:  bold;
-  font-family: century gothic;
+  font-family: "century gothic";
 }
 .cgf{
-  font-family: century gothic;
+  font-family: "century gothic";
   font-weight: bold;
+}
+.cgff{
+  font-family: "century gothic"
 }
 .inline{
   display: inline-block;;
+}
+.judreg{
+  position:relative;
+  bottom:10px;
+  height:30px;
+  display:inline-block;
+}
+.redbutton{
+  background-color: #A72C2C;
+  border:none;
+  color: white;
 }

@@ -1,19 +1,49 @@
 <ion-view hide-nav-bar="true" title="Menu" id="menupage" class=" ">
-    <ion-content padding="true" class="has-header">
-        <ion-list id="menu-list5" class=" ">
-            <ion-item class="item-avatar assertive  " id="menu-list-item2" ui-sref="profile">
-                <img src="img/fotoprofil.jpg">
-                <h2assertive>Bebeb</h2assertive>
-            </ion-item>
-            <ion-item class="item-thumbnail-left  " id="menu-list-item4">
-                <h2>Item</h2>
-            </ion-item>
-            <ion-item id="menu-list-item5" ui-sref="setting" class="  ">Setting</ion-item>
-        </ion-list>
-        <ion-list id="menu-list9" class=" ">
-            <ion-item id="menu-list-item6" class="  ">Item 1</ion-item>
-            <ion-item id="menu-list-item7" class="  ">Item 2</ion-item>
-            <ion-item id="menu-list-item8" class="  ">Item 3</ion-item>
-        </ion-list>
-    </ion-content>
+    <ion-content padding="true" class="">
+      <div>
+        <div style="margin:10px 0 0 10px; display:inline-block">
+          <img src="img/brmini.png" width="40px" height="40px" style="display: inline;">
+        </div>
+          <div style="margin:10px 10px 0 0; position:relative;float:right; bottom:0; display:inline-block">
+          <button ui-sref="setting" style="height:40px; width : 40px; " class="round brbutton">:</button>
+        </div>
+      </div>
+      <div class="cgff" style=" width:180px; margin:auto;">
+        <!-- nama user -->
+        <div style="color:#A72C2C;font-weight:bold;text-align:center;">
+          Aurelia Ayu
+        </div>
+        <!-- golongan darah -->
+        <button class="redbutton" style="border-radius:30px; border:none; position: relative;bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
+          A
+        </button>
+        <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
+          <!-- foto profil -->
+          <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
+            <img style="height:100px; width:100px;" src="img/fotoprofil.jpg">
+          </button>
+          <!-- status -->
+          <div class="redbutton" id="statusdonor" style="margin-top:10px;text-align:center; border-radius:20px; ">
+            ready
+          </div>
+        </div>
+        <!-- jumlah donasi -->
+        <button class=" redbutton" style="border-radius:30px;border:none; position: relative; bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
+          3
+        </button>
+        <!-- tombol kegiatan -->
+        <button class="redbutton" ui-sref="kegiatan" style="width:177px; border:none; border-radius:30px; margin:10px 0;"> Kegiatan Donor Darah </button>
+      </div>
+      <div class="row">
+        <!-- bloodcall -->
+        <div style="background-color:#FFE000; height:100px;" class="col col-40">
+
+        </div>
+        <!-- newsfeed -->
+        <div style="background-color:#FFCD00; height:100px;" class="col col-60">
+
+        </div>
+      </div>
+        <button style="display:inline; margin-left:15%" ui-sref="login" id="menulogout" class="round brbutton">logout</button>
+  </ion-content>
 </ion-view>
