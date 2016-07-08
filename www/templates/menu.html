@@ -32,16 +32,25 @@
           3
         </button>
         <!-- tombol kegiatan -->
-        <button class="redbutton" ui-sref="kegiatan" style="width:177px; border:none; border-radius:30px; margin:10px 0;"> Kegiatan Donor Darah </button>
+        <button class="redbutton" ui-sref="kegiatan" style="width:177px; border:none; border-radius:30px; margin:10px 0;">
+          Blood Donation Event </button>
+      </div>
+      <div class="row">
+        <div class="cgf col col-40" style="text-align:right; background-color:red">
+          BloodCall
+        </div>
+        <div class="cgf col col-60" style="background-color:purple">
+          Newsfeed
+        </div>
       </div>
       <div class="row">
         <!-- bloodcall -->
-        <div style="background-color:#FFE000; height:100px;" class="col col-40">
-
+        <div style="background-color:#FFE000; height:200px;" class="col col-40">
+          <ion-item ui-sref="BloodCall"> BloodCall</ion-item>
         </div>
         <!-- newsfeed -->
-        <div style="background-color:#FFCD00; height:100px;" class="col col-60">
-
+        <div style="background-color:#FFCD00; height:200px;" class="col col-60">
+          <ion-item ui-sref="NewsFeed"> NewsFeed</ion-item>
         </div>
       </div>
         <button style="display:inline; margin-left:15%" ui-sref="login" id="menulogout" class="round brbutton">logout</button>

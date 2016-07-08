@@ -58,6 +58,36 @@ angular.module('app.routes', [])
     controller: 'kegiatanCtrl'
   })
 
+  .state('BloodCall', {
+    url: '/BloodCallpage',
+    templateUrl: 'templates/BloodCall.html',
+    controller: 'BloodCallCtrl'
+  })
+
+  .state('NewsFeed', {
+    url: '/NewsFeedpage',
+    templateUrl: 'templates/NewsFeed.html',
+    controller: 'NewsFeedCtrl'
+  })
+
+  .state('ForgotPass', {
+    url: '/ForgotPasspage',
+    templateUrl: 'templates/ForgotPass.html',
+    controller: 'ForgotPassCtrl'
+  })
+
+  .state('Histori', {
+    url: '/Historipage',
+    templateUrl: 'templates/Histori.html',
+    controller: 'HistoriCtrl'
+  })
+
+  .state('Event', {
+    url: '/Eventpage',
+    templateUrl: 'templates/Event.html',
+    controller: 'EventCtrl'
+  })
+
 $urlRouterProvider.otherwise('/loginpage')
 
 
