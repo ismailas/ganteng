@@ -9,7 +9,11 @@ angular.module('app.controllers', [])
 })
 
 .controller('menuCtrl', function($scope) {
+    $scope.name = "Sumail Abdush";
 
+    $scope.changeName   = function() {
+        $scope.name = "randomed" + Math.random();
+    }
 })
 
 .controller('profileCtrl', function($scope) {

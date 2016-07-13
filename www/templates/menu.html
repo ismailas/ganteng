@@ -2,17 +2,17 @@
     <ion-content padding="true" class="cgff">
       <div>
         <div style="margin:10px 0 0 10px; display:inline-block">
-          <img src="img/brmini.png" width="40px" height="40px" style="display: inline;">
+          <img src="img/brlogo2.png" height="25px" style="display: inline;">
         </div>
         <div style="margin:10px 10px 0 0; position:relative;float:right; bottom:0; display:inline-block">
           <button ui-sref="setting" style="height:40px; width : 40px; " class="round brbutton">:</button>
-          <button ui-sref="Login" style="height:40px; width : 40px; " class="round brbutton">Logout</button>
+          <button ui-sref="login" style="height:40px; width : 40px; " class="round brbutton">Logout</button>
         </div>
       </div>
-      <div class="cgff" style=" width:180px; margin:auto;">
+      <div class="cgff" style=" width:180px; margin:30px auto 10px;">
         <!-- nama user -->
         <div style="color:#A72C2C;font-weight:bold;text-align:center;">
-          Aurelia Ayu
+          {{ name }}
         </div>
         <!-- golongan darah -->
         <button class="redbutton" style="border-radius:30px; border:none; position: relative;bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
@@ -46,14 +46,14 @@
       </div>
       <div class="row">
         <!-- bloodcall -->
-        <div style="background-color:#FFE000; height:200px;" class="col col-40">
+        <div style="background-color:#FFE000; height:300px;" class="col col-40">
           <ion-item ui-sref="BloodCall"> BloodCall</ion-item>
         </div>
         <!-- newsfeed -->
-        <div style="background-color:#FFCD00; height:200px;" class="col col-60">
+        <div style="background-color:#FFCD00; height:300px;" class="col col-60">
           <ion-item ui-sref="NewsFeed"> NewsFeed</ion-item>
         </div>
       </div>
-        <button style="display:inline; margin-left:15%" ui-sref="login" id="menulogout" class="round brbutton">logout</button>
+
   </ion-content>
 </ion-view>
