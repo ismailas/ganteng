@@ -1,61 +1,61 @@
 <ion-view hide-nav-bar="true" title="Menu" id="menupage" class=" ">
     <ion-content padding="true" class="cgff">
-      <div>
-        <div style="margin:10px 0 0 10px; display:inline-block" ng-click="statuscheck = !statuscheck">
-          <img src="img/brlogo2.png" height="25px" style="display: inline;">
+        <div>
+            <div style="margin:10px 0 0 10px; display:inline-block" ng-click="statuscheck = !statuscheck">
+                <img src="img/brlogo2.png" height="25px" style="display: inline;">
+            </div>
+            <div style="margin:10px 10px 0 0; position:relative;float:right; bottom:0; display:inline-block">
+                <button ui-sref="setting" style="height:30px; width : 30px; " class="brbutton"><i class="icon ion-gear-b"></i></button>
+                <button ui-sref="login" style="height:30px; width : 30px; " class="brbutton"><i class="icon ion-power"></i></button>
+            </div>
         </div>
-        <div style="margin:10px 10px 0 0; position:relative;float:right; bottom:0; display:inline-block">
-          <button ui-sref="setting" style="height:30px; width : 30px; " class="brbutton"><i class="icon ion-gear-b"></i></button>
-          <button ui-sref="login" style="height:30px; width : 30px; " class="brbutton"><i class="icon ion-power"></i></button>
-        </div>
-      </div>
-      <div class="cgff" style=" width:180px; margin:30px auto 10px;">
-        <!-- nama user -->
-        <div style="color:#A72C2C;font-weight:bold;text-align:center;">
-          {{ name }}
-        </div>
-        <!-- golongan darah -->
-        <button class="redbutton" style="border-radius:30px; border:none; position: relative;bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
-          {{goldar}}
-        </button>
-        <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
-          <!-- foto profil -->
-          <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
-            <img style="height:100px; width:100px;" src={{pimg}}>
-          </button>
-          <!-- status -->
-          <div class="redbutton" id="statusdonor" style="margin-top:10px;text-align:center; border-radius:20px; ">
-            <div id="status-check" ng-show="statuscheck"><i class="icon ion-power"></i></div> {{ status }}
-          </div>
-        </div>
-        <!-- jumlah donasi -->
-        <button class=" redbutton" style="border-radius:30px;border:none; position: relative; bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
-          {{jumdon}}
-        </button>
-        <!-- tombol kegiatan -->
-        <div class="">
-          <button class="redbutton" ui-sref="kegiatan" style="height:30px; width:177px; border:none; border-radius:30px; margin:10px 0;">
-            Blood Donation Event </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="cgf col col-40" style="text-align:right; background-color:red">
-          BloodCall
-        </div>
-        <div class="cgf col col-60" style="background-color:purple">
-          Newsfeed
-        </div>
-      </div>
-      <div class="row">
-        <!-- bloodcall -->
-        <div style="background-color:#FFE000; height:300px;" class="col col-40">
-          <ion-item ui-sref="BloodCall"> BloodCall</ion-item>
-        </div>
-        <!-- newsfeed -->
-        <div style="background-color:#FFCD00; height:300px;" class="col col-60">
-          <ion-item ui-sref="NewsFeed"> NewsFeed</ion-item>
-        </div>
-      </div>
+        <div class="cgff" style=" width:180px; margin:30px auto 10px;">
+            <!-- nama user -->
+            <div style="color:#A72C2C;font-weight:bold;text-align:center;">
+                {{ name }}
+            </div>
+            <!-- golongan darah -->
+            <button class="redbutton" style="border-radius:30px; border:none; position: relative;bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
+                {{goldar}}
+            </button>
+            <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
+                <!-- foto profil -->
+                <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
+                    <img style="height:100px; width:100px;" src={{pimg}}>
+                </button>
+                <!-- status -->
+                <div class="redbutton" id="statusdonor" style="margin-top:10px;text-align:center; border-radius:20px; ">
+                    <div id="status-check" ng-show="statuscheck"><i class="icon ion-power"></i></div> {{ status }}
+                </div>
+            </div>
+            <!-- jumlah donasi -->
+            <button class=" redbutton" style="border-radius:30px;border:none; position: relative; bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
+                {{jumdon}}
+            </button>
+            <!-- tombol kegiatan -->
+            <div class="">
+                <button class="redbutton" ui-sref="kegiatan" style="height:30px; width:177px; border:none; border-radius:30px; margin:10px 0;">
+                    Blood Donation Event </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cgf col col-40" style="text-align:right; background-color:red">
+                    BloodCall
+                </div>
+                <div class="cgf col col-60" style="background-color:purple">
+                    Newsfeed
+                </div>
+            </div>
+            <div class="row">
+                <!-- bloodcall -->
+                <div style="background-color:#FFE000; height:300px;" class="col col-40">
+                    <ion-item ui-sref="BloodCall"> BloodCall</ion-item>
+                </div>
+                <!-- newsfeed -->
+                <div style="background-color:#FFCD00; height:300px;" class="col col-60">
+                    <ion-item ui-sref="NewsFeed"> NewsFeed</ion-item>
+                </div>
+            </div>
 
-  </ion-content>
-</ion-view>
+        </ion-content>
+    </ion-view>
