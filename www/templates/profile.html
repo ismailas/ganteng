@@ -1,76 +1,85 @@
-<ion-view title="Profile" id="profilepage" class=" ">
-    <ion-content padding="false" class="has-header">
-      <div style="padding:5px;border:solid;border-color:grey;">
-        <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
-          <!-- foto profil -->
-          <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
-            <img style="height:100px; width:100px;" src="img/fotoprofil.jpg">
-          </button>
-          <!-- change -->
-          <div class="redbutton cgf" style="text-align:center; border-radius:20px; ">
-            change
-          </div>
-        </div>
-        <!-- histori -->
-        <button ui-sref="Histori" style="margin:5px 5px 0 0; float:right;font-size:15px;border:none; display:inline-block; height:100px;width:100px;" class="round brbutton">
-          Donation<br/>History
-        </button>
-      </div>
-      <!-- First Name -->
-      <div>
-        <div style="margin-top:5px;" class="row cgff">
-          <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-            First Name :
-          </div>
-          <div class="col col-60">
-            Aurelia
-          </div>
-        </div>
-        <!-- Last name -->
-        <div style="margin-top:5px;" class="row cgff">
-          <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-            Last Name :
-          </div>
-          <div class="col col-60">
-            Ayu
-          </div>
-        </div>
-        <!-- Tanggal Lahir -->
-        <div style="margin-top:5px;" class="row cgff">
-          <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-            Birth Date :
-          </div>
-          <div class="col col-60">
-            12 January 1993
-          </div>
-        </div>
-        <!-- Golongan Darah -->
-        <div style="margin-top:5px;" class="row cgff">
-          <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-            Blood Type :
-          </div>
-          <div class="col col-60">
-            A
-          </div>
-        </div>
-        <!-- Email -->
-        <div style="margin-top:5px;" class="cgff row">
-          <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-            Email :
-          </div>
-          <div class="col col-60 ">
-            Aureliayu@gmail.com
-          </div>
-        </div>
+<ion-view hide-nav-bar="true" title="Profile" id="profilepage" class=" ">
+    <ion-content padding="false" class="">
+        <ion-header-bar align-title="center" class="bar-jancuks">
+            <div class="buttons">
+                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+            </div>
+            <h1 class="title">NewsFeed</h1>
+        </ion-header-bar>
+        <ion-content class="has-header">
+            <div style="padding:5px;border:solid;border-color:grey;">
+              <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
+                <!-- foto profil -->
+                <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
+                  <img style="height:100px; width:100px;" src="img/fotoprofil.jpg">
+                </button>
+                <!-- change -->
+                <div class="redbutton cgf" style="text-align:center; border-radius:20px; ">
+                  change
+                </div>
+              </div>
+              <!-- histori -->
+              <button ui-sref="Histori" style="margin:5px 5px 0 0; float:right;font-size:15px;border:none; display:inline-block; height:100px;width:100px;" class="round brbutton">
+                Donation<br/>History
+              </button>
+            </div>
+            <!-- First Name -->
+            <div>
+              <div style="margin-top:5px;" class="row cgff">
+                <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
+                  First Name :
+                </div>
+                <div class="col col-60">
+                  Aurelia
+                </div>
+              </div>
+              <!-- Last name -->
+              <div style="margin-top:5px;" class="row cgff">
+                <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
+                  Last Name :
+                </div>
+                <div class="col col-60">
+                  Ayu
+                </div>
+              </div>
+              <!-- Tanggal Lahir -->
+              <div style="margin-top:5px;" class="row cgff">
+                <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
+                  Birth Date :
+                </div>
+                <div class="col col-60">
+                  12 January 1993
+                </div>
+              </div>
+              <!-- Golongan Darah -->
+              <div style="margin-top:5px;" class="row cgff">
+                <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
+                  Blood Type :
+                </div>
+                <div class="col col-60">
+                  A
+                </div>
+              </div>
+              <!-- Email -->
+              <div style="margin-top:5px;" class="cgff row">
+                <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
+                  Email :
+                </div>
+                <div class="col col-60 ">
+                  Aureliayu@gmail.com
+                </div>
+              </div>
 
-      </div>
-      <div class="row">
-        <div class="col col-33">
-          <button style="padding:2px 10px;float:right;border-radius:20px;" class="cgf redbutton">Edit</button>
-        </div>
-        <div class="col col-67">
-          <a style="color:grey;" href="">Edit Password</a>
-        </div>
-      </div>
+            </div>
+            <div class="row">
+              <div class="col col-33">
+                <button style="padding:2px 10px;float:right;border-radius:20px;" class="cgf redbutton">Edit</button>
+              </div>
+              <div class="col col-67">
+                <a style="color:grey;" href="">Edit Password</a>
+              </div>
+            </div>
+        </ion-content>
+
     </ion-content>
 </ion-view>

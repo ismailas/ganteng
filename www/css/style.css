@@ -1,47 +1,58 @@
 /* Empty. Add your own CSS if you like */
 .round{
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 .brbutton{
-  background-color: #A72C2C;
-  border: none;
-  width: 100px; height: 100px;
-  color:white;
-  font-size: 20px;
-  font-weight:  bold;
-  font-family: 'Poppins', sans-serif;
+    background-color: #A72C2C;
+    border: none;
+    width: 100px; height: 100px;
+    color:white;
+    font-size: 20px;
+    font-weight:  bold;
+    font-family: 'Poppins', sans-serif;
 }
 .cgf{
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 .cgff{
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .inline{
-  display: inline-block;;
+    display: inline-block;;
 }
 .judreg{
-  position:relative;
-  bottom:10px;
-  height:30px;
-  display:inline-block;
+    position:relative;
+    bottom:10px;
+    height:30px;
+    display:inline-block;
 }
 .redbutton{
-  background-color: #A72C2C;
-  border:none;
-  color: white;
+    background-color: #A72C2C;
+    border:none;
+    color: white;
 }
 
 .twinbutton{
-  width:260px;
-  display: flex;
-  margin:30px auto 0;
+    width:260px;
+    display: flex;
+    margin:30px auto 0;
 }
 
 .scroll {
     height: 100%;
+}
+
+.smallbrbutton{
+    border-radius: 5px;
+    background-color: #A72C2C;
+    border: none;
+    width: 30px; height: 30px;
+    color:white;
+    font-size: 20px;
+    font-weight:  bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 #mapz {
@@ -49,6 +60,104 @@
     height: 480px!important;
 }
 
+#btnlogoutsetting{
+    margin:10px 10px 0 0;
+    position:relative;
+    float:right;
+    bottom:0;
+    display:inline-block
+}
+
+#brprof{
+    width:180px;
+    margin:10px auto 0px;
+}
+
+#namauser{
+    color:#A72C2C;
+    font-weight:bold;
+    text-align:center;
+}
+
+#golongandarah{
+    border-radius:30px;
+    border:none;
+    position: relative;
+    bottom:40px;
+    background-color:#A72C2C;
+    height:30px;
+    width:30px;
+    display:inline-block;
+}
+
+#ppstatus{
+    padding:5px;
+    height:110px;
+    width:110px;
+    display:inline-block;
+    background-color:#A72C2C;
+}
+
+#pprofil{
+    border:none;
+    display:inline-block;
+    height:100px;
+    width:100px;
+    overflow:hidden;
+}
+
+#statusdonor{
+    margin-top:10px;
+    text-align:center;
+    border-radius:20px;
+}
+
 .angular-google-map-container {
     height: 500px;
 }
+
+.bakgr1 {
+    /*background-color: red;*/
+    background: url("/img/brbg3.png");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+}
+.bakgr2 {
+    /*background-color: red;*/
+    background: url("/img/brbg4.png");
+    background-size: 100px 100px;
+    background-repeat: repeat;
+}
+
+.brprofil {
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    padding-bottom: 5px;
+    padding-top: 1px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color:white;
+
+}
+
+.bar.bar-jancuks {
+    border-color: #A72C2C;
+    background-color: #A72C2C;
+    background-image: linear-gradient(0deg, #A72C2C, #A72C2C 50%, transparent 50%);
+    color: #fff;
+}
+.bar.bar-jancuks .title {
+    color: #fff;
+    text-align: center;
+}
+
+.bar-jancuks .button {
+    color: #fff;
+    text-decoration: none; }
+
+
+.bar-jancuks .button:hover {
+        color: #fff;
+        text-decoration: none; }

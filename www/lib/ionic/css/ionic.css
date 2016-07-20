@@ -3955,9 +3955,11 @@ a.subdued {
     border-color: #e42112;
     background-color: #ef473a;
     background-image: linear-gradient(0deg, #e42112, #e42112 50%, transparent 50%);
-    color: #fff; }
+    color: #fff;
+ }
     .bar.bar-assertive .title {
-      color: #fff; }
+      color: #fff;
+    }
     .bar.bar-assertive.bar-footer {
       background-image: linear-gradient(180deg, #e42112, #e42112 50%, transparent 50%); }
   .bar.bar-balanced {
