@@ -86,6 +86,14 @@ angular.module('app.controllers', [])
     $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
 })
 
+.controller('AboutCtrl',function($scope){
+
+})
+
+.controller('FeedbackCtrl',function($scope){
+
+})
+
 // .controller('MapController', function($scope, $ionicLoading) {
 //
 //     google.maps.event.addDomListener(window, 'load', function() {

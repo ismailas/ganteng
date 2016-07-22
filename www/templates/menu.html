@@ -9,7 +9,7 @@
                 <button ui-sref="login"  class="smallbrbutton"><i class="icon ion-power"></i></button>
             </div>
         </div>
-        <div class="brprofil" style="">
+        <div id="brprofil">
         <div id="brprof" class="cgff " >
             <!-- nama user -->
             <div id="namauser">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <!-- jumlah donasi -->
-            <button id="jumdon" class="cgff redbutton" style="border-radius:30px;border:none; position: relative; bottom:40px; background-color:#A72C2C; height:30px; width:30px; display:inline-block;">
+            <button id="jumdon" class="cgff redbutton" >
                 {{jumdon}}
             </button>
             <!-- tombol kegiatan -->
@@ -40,23 +40,25 @@
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="cgf col col-40" style="text-align:right; background-color:#B42F2F">
-                    BloodCall
-                </div>
-                <div class="cgf col col-60" style="background-color:#F34040">
+        <!-- bloodcall -->
+        <div id="bclist">
+            <div id="bcbar" class="cgf col col-40" >
+                BloodCall
+            </div>
+            <!-- <button class="brbutton"> testing</button> -->
+            <ion-item id="bcitem" ui-sref="BloodCall">
+                BloodCall</ion-item>
+            </div>
+            <!-- newsfeed -->
+            <div id="nflist">
+                <div id="nfbar" class="cgf col col-40" >
                     Newsfeed
                 </div>
+                <ion-item id="nfitem" ui-sref="NewsFeed"> NewsFeed</ion-item>
             </div>
             <div class="row">
-                <!-- bloodcall -->
-                <div style="background-color:#E5D7DE; height:300px;" class="col col-40">
-                    <ion-item ui-sref="BloodCall"> BloodCall</ion-item>
-                </div>
-                <!-- newsfeed -->
-                <div style="background-color:#FFEFF6; height:300px;" class="col col-60">
-                    <ion-item ui-sref="NewsFeed"> NewsFeed</ion-item>
-                </div>
+            </div>
+            <div class="row">
             </div>
 
         </ion-content>

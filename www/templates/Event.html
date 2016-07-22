@@ -1,31 +1,58 @@
-<ion-view title="Event" id="Eventpage" class=" ">
-    <ion-content padding="false" class="has-header" >
-        <!-- <div id="map" data-tap-disabled="true"></div> -->
-        <div map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true">
-            <!-- <ng-map id="map" center="-6.89309,107.6073811" zoom="15">
-            <directions
-            draggable="true"
-            panel="directions-panel"
-            travel-mode="DRIVING"
-            origin="-6.8914747,107.6084704"
-            destination="-6.9297115,107.6034086">
-        </directions>
-        <marker position="-6.9297115,107.6034086" title="Hello World!"></marker>
+<ion-view hide-nav-bar="true" title="Event" id="Eventpage" class=" ">
+    <ion-content padding="false" class="" >
 
-    </ng-map> -->
-    <ng-map zoom="14"
-        center="-6.89309,107.6073811"
-        style="height:480px" >
-        <directions
-            draggable="true"
-            panel="directions-panel"
-            travel-mode="DRIVING"
-            origin="current-location"
-            destination="-6.9297115,107.6034086">
-        </directions>
+        <ion-header-bar align-title="center" class="bar-assertive">
+            <div class="buttons">
+                <button ui-sref="kegiatan" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+            </div>
+            <h1 class="title">Event</h1>
+        </ion-header-bar>
+        <ion-content class="has-footer has-header">
+            <!-- Some content! -->
+            <div map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true">
+                <!-- <ng-map id="map" center="-6.89309,107.6073811" zoom="15">
+                <directions
+                draggable="true"
+                panel="directions-panel"
+                travel-mode="DRIVING"
+                origin="-6.8914747,107.6084704"
+                destination="-6.9297115,107.6034086">
+            </directions>
+            <marker position="-6.9297115,107.6034086" title="Hello World!"></marker>
 
-</ng-map>
-</div>
+        </ng-map> -->
+                    <ng-map zoom="14"
+                        center="-6.89309,107.6073811"
+                        style="height:480px" >
+                    <directions
+                        draggable="true"
+                        panel="directions-panel"
+                        travel-mode="DRIVING"
+                        origin="current-location"
+                        destination="-6.9297115,107.6034086">
+                    </directions>
+
+                    </ng-map>
+            </div>
+            <div id="evbar" >
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+</ion-content>
+<ion-footer-bar align-title="left" class="bar-stable">
+
+  <h1 class="title">Kegiatan Donor Darah Bersama SBY</h1>
+
+  <div class="buttons" ng-click="doSomething()">
+    <button class="button button-assertive">Donate</button>
+  </div>
+</ion-footer-bar>
+<!-- <div id="map" data-tap-disabled="true"></div> -->
 <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom'>
 
 </ui-gmap-google-map> -->

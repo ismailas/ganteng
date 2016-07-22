@@ -4,7 +4,7 @@
 }
 
 .brbutton{
-    background-color: #A72C2C;
+    background-color: #D53F34;
     border: none;
     width: 100px; height: 100px;
     color:white;
@@ -29,7 +29,7 @@
     display:inline-block;
 }
 .redbutton{
-    background-color: #A72C2C;
+    background-color: #D53F34;
     border:none;
     color: white;
 }
@@ -46,7 +46,7 @@
 
 .smallbrbutton{
     border-radius: 5px;
-    background-color: #A72C2C;
+    background-color: #D53F34;
     border: none;
     width: 30px; height: 30px;
     color:white;
@@ -74,7 +74,7 @@
 }
 
 #namauser{
-    color:#A72C2C;
+    color:#D53F34;
     font-weight:bold;
     text-align:center;
 }
@@ -84,7 +84,7 @@
     border:none;
     position: relative;
     bottom:40px;
-    background-color:#A72C2C;
+    background-color:#D53F34;
     height:30px;
     width:30px;
     display:inline-block;
@@ -95,7 +95,7 @@
     height:110px;
     width:110px;
     display:inline-block;
-    background-color:#A72C2C;
+    background-color:#D53F34;
 }
 
 #pprofil{
@@ -110,6 +110,54 @@
     margin-top:10px;
     text-align:center;
     border-radius:20px;
+}
+
+#jumdon{
+    border-radius:30px;
+    border:none;
+    position: relative;
+    bottom:40px;
+    background-color:#D53F34;
+    height:30px;
+    width:30px;
+    display:inline-block;
+}
+
+#bclist{
+    margin: 5px;
+    padding: 5px;
+    background-color:#E5D7DE;
+
+}
+
+#nflist{
+    margin: 5px;
+    padding: 5px;
+    background-color:#FFEFF6;
+    /*height:200px;*/
+}
+
+#bcitem{
+
+}
+
+#nfitem{
+
+}
+
+#bcbar{
+    text-align:center;
+    background-color:#D53F34;
+    color: #fff;
+}
+
+#nfbar{
+    background-color:#FF4C3E;
+    color: #fff;
+}
+
+#evbar{
+    
 }
 
 .angular-google-map-container {
@@ -129,7 +177,7 @@
     background-repeat: repeat;
 }
 
-.brprofil {
+#brprofil {
     border-radius: 5px;
     border-style: solid;
     border-color: black;
@@ -141,6 +189,8 @@
     background-color:white;
 
 }
+
+/*ef473a*/
 
 .bar.bar-jancuks {
     border-color: #A72C2C;

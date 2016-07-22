@@ -1,12 +1,20 @@
-<ion-view title="Setting" id="settingpage" class=" ">
-    <ion-content padding="true" class="has-header">
-        <form id="setting-form6" class="list ">
-            <ion-toggle toggle-class="toggle-assertive" id="setting-toggle2" class=" ">Notification</ion-toggle>
-            <ion-checkbox>Sound</ion-checkbox>
-            <ion-checkbox>Vibration</ion-checkbox>
-            <ion-toggle toggle-class="toggle-positive" id="setting-toggle3" class=" ">Auto-detect Location</ion-toggle>
-            <ion-item id="setting-list-item9" class="  ">Feedback &amp; Support</ion-item>
-            <ion-item id="setting-list-item10" class="  ">About Us</ion-item>
-        </form>
+<ion-view hide-nav-bar="true" title="Setting" id="settingpage" class=" ">
+    <ion-content padding="true" class="">
+        <ion-header-bar align-title="center" class="bar-assertive">
+            <div class="buttons">
+                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+            </div>
+            <h1 class="title">Setting</h1>
+        </ion-header-bar>
+        <ion-content class="has-header">
+            <form id="setting-form6" class="list ">
+                <ion-toggle toggle-class="toggle-assertive" id="setting-toggle2" class=" ">Notification</ion-toggle>
+                <ion-checkbox class="checkbox-assertive">Sound</ion-checkbox>
+                <ion-checkbox class="checkbox-assertive">Vibration</ion-checkbox>
+                <ion-toggle toggle-class="toggle-assertive" id="setting-toggle3" class=" ">Auto-detect Location</ion-toggle>
+                <ion-item ui-sref="feedback" id="setting-list-item9" class="  ">Feedback &amp; Support</ion-item>
+                <ion-item ui-sref="about" id="setting-list-item10" class="  ">About Us</ion-item>
+            </form>
+        </ion-content>
     </ion-content>
 </ion-view>

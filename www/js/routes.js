@@ -88,6 +88,18 @@ angular.module('app.routes', [])
     controller: 'EventCtrl'
   })
 
+  .state('about', {
+    url: '/aboutpage',
+    templateUrl: 'templates/about.html',
+    controller: 'AboutCtrl'
+  })
+
+  .state('feedback', {
+    url: '/feedbackpage',
+    templateUrl: 'templates/feedback.html',
+    controller: 'FeedbackCtrl'
+  })
+
 $urlRouterProvider.otherwise('/loginpage')
 
 
