@@ -3,6 +3,24 @@
     border-radius: 50%;
 }
 
+.brlogo{
+    display: block; margin-left: auto; margin-right: auto;
+}
+
+#brlogocontainer{
+    border-radius: 50%;
+    height: 210px;
+    width: 210px;
+    margin: 0 auto 10px;
+    padding-top: 5px;
+    background-color: #D53F34;
+
+}
+
+.contentpadding{
+    padding:10px 15px;
+}
+
 .brbutton{
     background-color: #D53F34;
     border: none;
@@ -34,6 +52,56 @@
     color: white;
 }
 
+.menutab{
+    /*border-radius: 20px 20px 0 0;*/
+    padding: 5px 5px;
+    background-color: lightgrey;
+    border: none;
+    border-width: thin;
+    /*border-style:  solid;*/
+    border-color: white;
+    color: black;
+    width: 32%;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+}
+
+#tabevent{
+    border-radius: 20px 0 0 0;
+    /*background-color: */
+    border-right-style: solid;
+}
+
+#tabbloodcall{
+    /*border-radius:*/
+    /*background-color: black;*/
+    border-right-style: solid;
+}
+
+#tabnewsfeed{
+    border-radius: 0 20px 0 0;
+    /*background-color: grey;*/
+}
+
+.tabactive{
+    background-color: #D53F34;
+    color: white;
+}
+
+#tab{
+    width: calc(100% + 5px);
+    margin: 10px 5px 0;
+    font-size:0;
+}
+
+#tabcontent{
+    width: calc(100% - 30px);
+    height: calc(100vh - 225px);
+    background-color: white;
+    margin: 0 5px;
+}
+
 .twinbutton{
     width:260px;
     display: flex;
@@ -60,6 +128,61 @@
     height: 480px!important;
 }
 
+.regtitle{
+    font-size:30px;
+    display:inline
+}
+
+.reglogo{
+    width:240px;
+    margin:10px auto;
+}
+
+.sumargin{
+    margin:10px auto;
+}
+
+.sumarginbutton{
+    margin-left:60px;
+}
+
+/*signup 1*/
+
+#su1profil{
+    display:inline-block;
+    margin: 0px; width:100px;
+    line-height: 100px;
+    text-align: center;
+    background-color:#D4D4D4 ;
+}
+
+#su1profillabel{
+    margin-left:20px;
+    display:inline-block;
+}
+
+#su1ikon{
+    font-size: 64px;
+    color: rgb(136, 136, 136);
+    vertical-align: middle;
+}
+
+/*signup 2*/
+
+
+
+/*about*/
+
+#aboutemail{
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: right;
+    color: #D53F34;
+    font-weight: bold;
+}
+
+/*main menu*/
+
 #btnlogoutsetting{
     margin:10px 10px 0 0;
     position:relative;
@@ -68,9 +191,21 @@
     display:inline-block
 }
 
+#brprofil {
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color:white;
+
+}
+
 #brprof{
-    width:180px;
-    margin:10px auto 0px;
+    width:100%;
+    /*margin:10px 0px;*/
 }
 
 #namauser{
@@ -79,116 +214,338 @@
     text-align:center;
 }
 
-#golongandarah{
-    border-radius:30px;
+#jumdon, #golongandarah, #status-check {
     border:none;
+    /*background-color:#D53F34;*/
+    height:40px;
+    /*width:50px;*/
+    /*display:inline-block;*/
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    color: #AF342B;
+}
+
+#status-check {
     position: relative;
-    bottom:40px;
-    background-color:#D53F34;
-    height:30px;
-    width:30px;
-    display:inline-block;
+    top: -2px;
 }
 
 #ppstatus{
-    padding:5px;
-    height:110px;
-    width:110px;
+    /*border-style: solid;
+    border-color: blue;*/
+    padding:2.5px;
+    height:75px;
+    width:75px;
+    margin: 0 10px;
     display:inline-block;
     background-color:#D53F34;
+
+}
+
+#profilproperties{
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+    /*background-color: yellow;*/
+    width: 70%; height: 75px;
+
 }
 
 #pprofil{
     border:none;
     display:inline-block;
-    height:100px;
-    width:100px;
+    height:70px;
+    width:70px;
     overflow:hidden;
 }
 
-#statusdonor{
-    margin-top:10px;
-    text-align:center;
-    border-radius:20px;
+#imgprofil{
+    height:70px; width:70px;
+    position: relative;
+    left: -7px;
 }
 
-#jumdon{
+#statusdonor{
+    /*padding: 2px 5px;*/
+    text-align:center;
+    height: 40px;
+    /*padding-top: 10px;*/
+    font-size: 14px;
+}
+
+
+#editprofile{
     border-radius:30px;
-    border:none;
-    position: relative;
-    bottom:40px;
-    background-color:#D53F34;
-    height:30px;
-    width:30px;
-    display:inline-block;
+    width: 100%; height: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pproperties{
+    margin: 0 2px;
+    display: inline-block;
+    /*background-color: lightgrey;*/
+    width: 30%;
+    margin-left: 1%;
+
+}
+
+.ketproperties{
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
 }
 
 #bclist{
+    border-radius: 10px;
     margin: 5px;
     padding: 5px;
-    background-color:#E5D7DE;
+    background-color:#fff;
 
 }
 
 #nflist{
+    border-radius: 10px;
     margin: 5px;
     padding: 5px;
-    background-color:#FFEFF6;
+    background-color:#fff;
     /*height:200px;*/
 }
 
-#bcitem{
+.nflisttitle{
+    color: #AF342B;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bccontent{
+    /*border-radius: 0 0 10px 10px ;*/
 
 }
 
-#nfitem{
+.nfitem{
 
 }
 
 #bcbar{
+    font-size: larger;
+    border-radius: 10px 10px 0 0;
     text-align:center;
     background-color:#D53F34;
     color: #fff;
+    padding: 10px;
 }
 
 #nfbar{
+    font-size: larger;
+    border-radius: 10px 10px 0 0;
+    text-align:center;
     background-color:#FF4C3E;
     color: #fff;
+    padding: 10px;
+}
+
+/*event*/
+
+.evitemclicked{
+    background-color: blue;
+}
+
+.evitemnotclicked{
+    background-color: yellow;
+}
+
+.evitem{
+    width: 100%;
+    padding : 12px 16px 12px 12px;
+    border-bottom : solid thin lightgrey;
+}
+
+.evitem:active{
+    background-color: #f1f1f1;
+}
+
+.textellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#evmap{
+    height:calc(100vh - 180px);
 }
 
 #evbar{
-    
+    width: 100%;
+    height: 138px;
+    background-color: white;
+    border-top-style: solid;
+    border-color: #D53F34;
+    border-width: 3px;
+    bottom: 0;
+    position: absolute;
+    padding: 5px 8px;
+
 }
 
+#evproperties{
+
+}
+
+.evtitle{
+    color: #AF342B;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.evorganizer{
+    color: grey;
+    font-size: 12px;
+}
+.evaddress{
+    font-size: 12px;
+}
+.evdate{
+    font-size: 12px;
+    font-weight: bold;
+}
+.evket{
+    font-size: 12px;
+}
+.evstatus{
+    /*width: 100px;*/
+    padding: 0px 10px 0px 10px;
+    font-size: 12px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    /*padding: 0;*/
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+.evdonate{
+    width: 70px;
+    height: 70px;
+    /*background-color: red;*/
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+/*reset password*/
+
+#rpemail{
+    margin: 15px 0;
+}
+
+#rpsubmit{
+    float: right;
+    margin-right:  20px;
+}
+
+#rptext{
+    word-wrap: break-word;
+    text-align: justify;
+    font-size:15px;
+    margin: 5px;
+}
+
+
+
+/*blood call*/
+
+.bccontainer{
+    padding: 5px;
+}
+
+.bcgoldar{
+    color: #D53F34;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.bcatasnama{
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.bctanggal{
+    border: none;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background-color: lightgrey;
+}
+
+.bcketerangan{
+    word-wrap: break-word;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+/*News Feed*/
+
+.nfcontainer{
+    padding: 5px 15px;
+}
+
+.nfimage{
+    position: relative;
+
+}
+
+.nftitle{
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    bottom:  5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:10px;
+
+}
+
+.nfauthor{
+    color: grey;
+}
+
+.nfdate{
+    font-size: 11px;
+    border: none;
+    padding: 0 7px;
+    border-radius: 20px;
+    background-color: lightgrey;
+}
+
+.nfkonten{
+    word-wrap: break-word;
+    padding: 10px 5px;
+    text-align: justify;
+}
+
+/*______________________________________________________________________*/
 .angular-google-map-container {
     height: 500px;
 }
 
+/*background*/
 .bakgr1 {
     /*background-color: red;*/
-    background: url("/img/brbg3.png");
+    background: url("../img/brbg3.png");
     background-size: 200px 200px;
     background-repeat: repeat;
 }
 .bakgr2 {
-    /*background-color: red;*/
-    background: url("/img/brbg4.png");
+    /*background-color: #f5f5f5;*/
+    background: url("../img/brbg4.png");
     background-size: 100px 100px;
     background-repeat: repeat;
 }
 
-#brprofil {
-    border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-    padding-bottom: 5px;
-    padding-top: 1px;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color:white;
-
-}
 
 /*ef473a*/
 

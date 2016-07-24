@@ -2,12 +2,24 @@
     <ion-content padding="false" class="">
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
-                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+                <button ui-sref="login" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
             </div>
             <h1 class="title">Password Reset</h1>
         </ion-header-bar>
-        <ion-content class="has-header">
-            Some content!
+        <ion-content class="cgff has-header">
+            <div class="contentpadding">
+            <div id="rptext">
+                Insert your email address to reset your password.
+                We will send you new password.
+            </div>
+            <label class="item item-input " id="rpemail">
+                <input type="email" placeholder="someone@somedomain.com">
+            </label>
+
+             <button id="rpsubmit" class="round brbutton">
+                 Submit
+             </button>
+         </div>
         </ion-content>
     </ion-content>
 </ion-view>

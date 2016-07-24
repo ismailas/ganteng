@@ -8,10 +8,19 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('menuCtrl', function($scope) {
+.controller('menuCtrl', function($scope, $state) {
     // username
     $scope.name = "Sumail Abdush";
     $scope.statuscheck  = true;
+    $scope.tabcheck = 0 ;
+
+    $scope.changeTab = function(newTab){
+        $scope.tabcheck = newTab;
+    };
+
+    $scope.isTabactive = function(tabcheck){
+        return $scope.tabcheck === tabcheck;
+    };
 
     $scope.changeName   = function() {
         $scope.name = "randomed" + Math.random();
@@ -44,13 +53,21 @@ angular.module('app.controllers', [])
     $scope.jumdon = "3";
 
     $scope.changeJumdon = function(){};
+
+    $state.go('menu.event');
+
+
 })
+
+
 
 .controller('profileCtrl', function($scope) {
 
 })
 
 .controller('signup2Ctrl', function($scope) {
+
+
 
 })
 
@@ -91,6 +108,21 @@ angular.module('app.controllers', [])
 })
 
 .controller('FeedbackCtrl',function($scope){
+
+})
+
+.controller('eventlistCtrl',function($scope){
+    // $scope.isClicked = "true";
+    // $scope.itemClicked = function(){
+    //     $scope.isClicked = "false";
+    // };
+})
+
+.controller('newsfeedlistCtrl',function($scope){
+
+})
+
+.controller('bloodcalllistCtrl',function($scope){
 
 })
 

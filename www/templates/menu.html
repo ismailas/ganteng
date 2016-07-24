@@ -12,54 +12,111 @@
         <div id="brprofil">
         <div id="brprof" class="cgff " >
             <!-- nama user -->
-            <div id="namauser">
+            <!-- <div id="namauser">
                 {{ name }}
-            </div>
-            <!-- golongan darah -->
-            <button id="golongandarah" class="cgff redbutton">
-                {{goldar}}
-            </button>
+            </div> -->
             <div id="ppstatus" class="round">
                 <!-- foto profil -->
                 <button id="pprofil" ui-sref="profile" class="round">
-                    <img style="height:100px; width:100px;" src={{pimg}}>
+                    <img id="imgprofil"  src={{pimg}}>
                 </button>
-                <!-- status -->
-                <div class="redbutton" id="statusdonor">
-                    <div id="status-check" ng-show="statuscheck"><i class="icon ion-power"></i></div> {{ status }}
+            </div>
+            <div id="profilproperties" class="">
+                <div class="">
+                    <!-- status -->
+                    <div class="pproperties">
+                        <div id="statusdonor">
+                            <div id="status-check" >
+                                <!-- <i ng-show="statuscheck" class="icon ion-checkmark-round"></i> -->
+                                <!-- <i ng-show="statuscheck" class="icon ion-close-round"></i> -->
+                                <i class="icon" ng-class="statuscheck ? 'ion-checkmark-round' : 'ion-close-round'"></i>
+                                <!-- {{ status }} -->
+                            </div>
+                        </div>
+                        <p class="ketproperties">{{ statuscheck ? 'Ready' : '30 days left' }}</p>
+                    </div>
+                    <!-- jumlah donasi -->
+                    <div class="pproperties">
+                        <div id="jumdon" class="cgff " >
+                            {{jumdon}}
+                        </div>
+                        <p class="ketproperties">Donation</p>
+                    </div>
+                    <!-- golongan darah -->
+                    <div class="pproperties">
+                        <div id="golongandarah" class="cgff">
+                            {{goldar}}
+                        </div>
+                        <p class="ketproperties">Type</p>
+                    </div>
+                </div>
+                <div ui-sref="profile" id="editprofile" class="cgff redbutton">
+                    Edit Profile
                 </div>
             </div>
-            <!-- jumlah donasi -->
-            <button id="jumdon" class="cgff redbutton" >
-                {{jumdon}}
-            </button>
-            <!-- tombol kegiatan -->
-            <div class="">
-                <button class="cgff redbutton" ui-sref="kegiatan" style="height:30px; width:177px; border:none; border-radius:30px; margin:10px 0;">
-                    Blood Donation Event </button>
-                </div>
             </div>
         </div>
-        <!-- bloodcall -->
+
+        <ul id="tab" >
+            <li id="tabevent" class="cgff menutab" ng-class="{'tabactive':isTabactive(0)}" ng-click="changeTab(0)" ui-sref='menu.event'>
+                <i class="icon ion-waterdrop"></i> Event
+            </li>
+            <li id="tabbloodcall" class="cgff menutab" ng-class="{'tabactive':isTabactive(1)}" ng-click="changeTab(1)" ui-sref='menu.bloodcall'>
+                <i class="icon ion-android-hand"></i> BloodCall
+            </li>
+            <li id="tabnewsfeed" class="cgff menutab" ng-class="{'tabactive':isTabactive(2)}" ng-click="changeTab(2)" ui-sref='menu.news'>
+                <i class="icon ion-social-rss"></i> Newsfeed
+            </li>
+        </ul>
+        <div  >
+            <ion-nav-view id="tabcontent" ></ion-nav-view>
+        </div>
+        <!-- <nav-view>
+            <nav-view name="menu-event"></nav-view>
+            <nav-view name="menu-news"></nav-view>
+            <nav-view name="menu-bloodcall"></nav-view>
+        </nav-view> -->
+
+<!--
+        <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+        <div id="test">
+            <ion-tab title="Event" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/menu/event">
+                <ion-nav-view name="menu-event"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="News" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/menu/news">
+                <ion-nav-view name="menu-news"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Bloodcall" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/menu/bloodcall">
+                <ion-nav-view name="menu-bloodcall"></ion-nav-view>
+            </ion-tab>
+
+        </div>
+
+
+        </ion-tabs> -->
+
+        <!-- <div class="">
+            <button class="cgff redbutton" ui-sref="kegiatan" style="height:30px; width:177px; border:none; border-radius:30px; margin:10px 0;">
+                Blood Donation Event </button>
+            </div>
         <div id="bclist">
-            <div id="bcbar" class="cgf col col-40" >
+            <div id="bcbar" class="cgf col" >
                 BloodCall
             </div>
-            <!-- <button class="brbutton"> testing</button> -->
-            <ion-item id="bcitem" ui-sref="BloodCall">
-                BloodCall</ion-item>
+            <div class="bccontent">
+                <ion-item id="bcitem" ui-sref="BloodCall">
+                    BloodCall</ion-item>
+                    <ion-item id="bcitem" ui-sref="BloodCall">
+                        BloodCall</ion-item>
+
             </div>
-            <!-- newsfeed -->
+
+            </div>
             <div id="nflist">
-                <div id="nfbar" class="cgf col col-40" >
+                <div id="nfbar" class="cgf col" >
                     Newsfeed
                 </div>
                 <ion-item id="nfitem" ui-sref="NewsFeed"> NewsFeed</ion-item>
-            </div>
-            <div class="row">
-            </div>
-            <div class="row">
-            </div>
-
+            </div> -->
         </ion-content>
     </ion-view>

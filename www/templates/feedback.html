@@ -6,8 +6,28 @@
             </div>
             <h1 class="title">Feedback and Support</h1>
         </ion-header-bar>
-        <ion-content class="has-header">
-            Some content!
+        <ion-content padding="true" class="has-header">
+            <form ng-submit="sendFeedback()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Your Name</span>
+                    <input type="text" ng-model="feedback.name" placeholder="Name">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="text" ng-model="feedback.email" placeholder="someone@somedomain.com">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Message</span>
+                    <input type="text" ng-model="feedback.message" placeholder="It would be great if you could give us feedback">
+                </label>
+                <padding>
+                    <button class="button button-assertive button-block">
+                        Send
+                    </button>
+                </padding>
+            </div>
+        </form>
         </ion-content>
     </ion-content>
 </ion-view>

@@ -3,11 +3,11 @@
 
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
-                <button ui-sref="kegiatan" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
             </div>
             <h1 class="title">Event</h1>
         </ion-header-bar>
-        <ion-content class="has-footer has-header">
+        <ion-content class=" has-header">
             <!-- Some content! -->
             <div map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true">
                 <!-- <ng-map id="map" center="-6.89309,107.6073811" zoom="15">
@@ -21,9 +21,9 @@
             <marker position="-6.9297115,107.6034086" title="Hello World!"></marker>
 
         </ng-map> -->
-                    <ng-map zoom="14"
+                    <ng-map zoom="15"
                         center="-6.89309,107.6073811"
-                        style="height:480px" >
+                        id="evmap" >
                     <directions
                         draggable="true"
                         panel="directions-panel"
@@ -34,24 +34,45 @@
 
                     </ng-map>
             </div>
-            <div id="evbar" >
-                <div>
+            <div id="evbar" class="cgff">
+                <div id="evproperties" class="">
+                    <button class="cgff round redbutton evdonate">
+                        Donate
+                    </button>
 
-                </div>
-                <div>
+                    <!-- <div id="evtitle" class="evellipsis">
+                        Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
+                    </div> -->
+
+                    <div class="evtitle" class="">
+                        Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
+                    </div>
+                    <div class="evorganizer">
+                        Mahdan Corp
+                    </div>
+                    <div class="evaddress">
+                        Jl.Sangkuriang C2, Bandung
+                    </div>
+                    <div class="evdate">
+                        14 Agustus 2016
+                        <span class="evstatus"> 9 days left </span>
+                    </div>
+                    <!-- <div id="evket">
+                        Belakang LIPI
+                    </div> -->
 
                 </div>
             </div>
 
 </ion-content>
-<ion-footer-bar align-title="left" class="bar-stable">
+<!-- <ion-footer-bar align-title="left" class="bar-stable">
 
   <h1 class="title">Kegiatan Donor Darah Bersama SBY</h1>
 
   <div class="buttons" ng-click="doSomething()">
     <button class="button button-assertive">Donate</button>
   </div>
-</ion-footer-bar>
+</ion-footer-bar> -->
 <!-- <div id="map" data-tap-disabled="true"></div> -->
 <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom'>
 
