@@ -8,11 +8,25 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('menuCtrl', function($scope, $state) {
+.controller('menuCtrl', function($scope, $state, $rootScope) {
     // username
     $scope.name = "Sumail Abdush";
     $scope.statuscheck  = true;
     $scope.tabcheck = 0 ;
+
+    $scope.user = {
+            "firstname" : "Chelsea",
+            "lastname"  : "Islan",
+            "goldar"    : "A",
+            "jumdon"    : 9,
+            "status"    : true,
+            "foto"      : "img/chelsea.jpg",
+            "birthdate" : "2 Juni 1995",
+            "email"     : "chelseaislan@gmail.com",
+            "password"  : "inichelsea123",
+            "lastdonate"   : Date.create("2 August 2015"),
+
+    };
 
     $scope.changeTab = function(newTab){
         $scope.tabcheck = newTab;
@@ -50,7 +64,7 @@ angular.module('app.controllers', [])
     $scope.changeGoldar = function(){};
 
     // jumlah donasi
-    $scope.jumdon = "3";
+    $scope.jumdon = 9;
 
     $scope.changeJumdon = function(){};
 
@@ -62,6 +76,22 @@ angular.module('app.controllers', [])
 
 
 .controller('profileCtrl', function($scope) {
+
+    $scope.editPassword = false;
+
+    $scope.user = {
+            "firstname" : "Chelsea",
+            "lastname"  : "Islan",
+            "goldar"    : "A",
+            "jumdon"    : 6,
+            "status"    : true,
+            "foto"      : "img/chelsea.jpg",
+            "birthdate" : "2 Juni 1995",
+            "email"     : "chelseaislan@gmail.com",
+            "password"  : "inichelsea123",
+            "lastdonate"   : Date.create("2 July 2016"),
+
+    };
 
 })
 
@@ -96,11 +126,60 @@ angular.module('app.controllers', [])
 })
 
 .controller('HistoriCtrl',function($scope){
+    $scope.addHistori = false;
+
+    $scope.user = {
+            "firstname"     : "Chelsea",
+            "lastname"      : "Islan",
+            "goldar"        : "A",
+            "jumdon"        : 6,
+            "status"        : true,
+            "foto"          : "img/chelsea.jpg",
+            "birthdate"     : "2 Juni 1995",
+            "email"         : "chelseaislan@gmail.com",
+            "password"      : "inichelsea123",
+            "lastdonate"    : Date.create("2 August 2015"),
+            "histori"       : [
+            {
+                "type"      : "event",
+                "evname"    : "Donor Bersama Bapak Mahdan",
+                "hisdate"   : Date.create("2 July 2016"),
+                "address"   : "Jl.Sangkuriang C2, Bandung"
+            },
+            {
+                "type"      : "event",
+                "evname"    : "Donor Bersama Bapak Dendi",
+                "hisdate"   : Date.create("3 April 2016"),
+                "address"   : "Jl.Sangkuriang L2, Bandung"
+            },
+            {
+                "type"      : "private",
+                // "evname"    : "Donor Bersama Bapak Dendi",
+                "hisdate"   : Date.create("2 February 2016"),
+                // "address"   : "Jl.Sangkuriang L2, Bandung"
+            },
+        ]
+    };
+
+    $scope.waktu = Date.create($scope.user.lastdonate).relative();
+    $scope.timeStamp = function(tanggal){
+        $scope.timelapse = Date.create(tanggal).relative();
+        return $scope.timelapse;
+    };
+
+    $scope.hiprivate = false;
+    // $scope.isPrivate = function(type){
+    //     if {
+    //         type == "private";
+    //         return $scope.hiprivate = true;
+    //     };
+    // };
 
 })
 
 .controller('EventCtrl',function($scope){
-    $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
+    // $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
+    $scope.statuscheck = false;
 })
 
 .controller('AboutCtrl',function($scope){

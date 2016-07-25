@@ -24,7 +24,7 @@ angular.module('app.routes', [])
 
     .state('menu', {
         url: '/menu',
-        
+
         // abstract : true,
         controller: 'menuCtrl',
         templateUrl: 'templates/menu.html',
@@ -111,7 +111,8 @@ angular.module('app.routes', [])
     .state('Histori', {
         url: '/Historipage',
         templateUrl: 'templates/Histori.html',
-        controller: 'HistoriCtrl'
+        controller: 'HistoriCtrl',
+        
     })
 
     .state('Event', {

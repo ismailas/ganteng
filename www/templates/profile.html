@@ -7,77 +7,103 @@
             <h1 class="title">Edit Profile</h1>
         </ion-header-bar>
         <ion-content class="has-header">
-            <div style="padding:5px;border:solid;border-color:grey;">
-                <div style="padding:5px; height:110px; width:110px; display:inline-block; background-color:#A72C2C;" class="round">
+            <div id="eptop">
                     <!-- foto profil -->
-                    <button ui-sref="profile" style="border:none; display:inline-block; height:100px;width:100px; overflow:hidden;" class="round">
-                        <img style="height:100px; width:100px;" src="img/fotoprofil.jpg">
-                    </button>
+                    <div id="epimgbg" class="round">
+                        <img id="epimg" src="{{user.foto}}">
+                    </div>
                     <!-- change -->
-                    <div class="redbutton cgf" style="text-align:center; border-radius:20px; ">
-                        change
+                    <button id="epchangeimg" class="round redbutton cgf ">
+                        <i class="icon ion-ios-camera-outline"></i>
+                    </button>
+                <!-- histori -->
+                <div class="cgff" id="ephistori">
+                    <div id="ephproperties">
+                        <span>Last Donation</span></br>
+                        {{user.lastdonate | date : "d MMMM yyyy"}}
+                    </div>
+                    <div id="ephview" class="redbutton" ui-sref="Histori">
+                        <i class="icon ion-calendar"></i>
                     </div>
                 </div>
-                <!-- histori -->
-                <button ui-sref="Histori" style="margin:5px 5px 0 0; float:right;font-size:15px;border:none; display:inline-block; height:100px;width:100px;" class="round brbutton">
-                    Donation<br/>History
-                </button>
             </div>
             <!-- First Name -->
             <div>
-                <div style="margin-top:5px;" class="row cgff">
-                    <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-                        First Name :
+                <div class="eprow cgff">
+                    <div class="cgff eplabelpass ">
+                        First Name
                     </div>
-                    <div class="col col-60">
-                        Aurelia
+                    <div class="epinput">
+                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.firstname}}">
                     </div>
                 </div>
                 <!-- Last name -->
-                <div style="margin-top:5px;" class="row cgff">
-                    <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-                        Last Name :
+                <div class="eprow cgff">
+                    <div class="cgff eplabelpass">
+                        Last Name
                     </div>
-                    <div class="col col-60">
-                        Ayu
+                    <div class="epinput">
+                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.lastname}}">
                     </div>
                 </div>
                 <!-- Tanggal Lahir -->
-                <div style="margin-top:5px;" class="row cgff">
-                    <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-                        Birth Date :
+                <div class="eprow cgff">
+                    <div class="cgff eplabelpass">
+                        Birth Date
                     </div>
-                    <div class="col col-60">
-                        12 January 1993
+                    <div class="epinput">
+                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.birthdate}}">
                     </div>
                 </div>
                 <!-- Golongan Darah -->
-                <div style="margin-top:5px;" class="row cgff">
-                    <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-                        Blood Type :
+                <div class="eprow cgff">
+                    <div class="cgff eplabelpass">
+                        Blood Type
                     </div>
-                    <div class="col col-60">
-                        A
+                    <div class="epinput">
+                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.goldar}}">
                     </div>
                 </div>
                 <!-- Email -->
-                <div style="margin-top:5px;" class="cgff row">
-                    <div style="border-radius:20px 0 0 20px; text-align:right; background-color:#A72C2C; color:white;" class="col col-33">
-                        Email :
+                <div class="eprow cgff" >
+                    <div class="cgff eplabelpass">
+                        Email
                     </div>
-                    <div class="col col-60 ">
-                        Aureliayu@gmail.com
+                    <div class="epinput ">
+                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.email}}">
                     </div>
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col col-33">
-                    <button style="padding:2px 10px;float:right;border-radius:20px;" class="cgf redbutton">Edit</button>
+            <div class="eprow cgff">
+                <div id="epepass" ng-click="editPassword = !editPassword">
+                    Edit password
                 </div>
-                <div class="col col-67">
-                    <a style="color:grey;" href="">Edit Password</a>
+            </div>
+
+            <div ng-show="editPassword" class="transisi">
+                <div class="eprow cgff" >
+                    <div class="cgff eplabelpass">
+                        Old Password
+                    </div>
+                    <div class="epinput ">
+                        <input class="epinputpass cgff" type="password" name="Password" placeholder="Your old password" value="">
+                    </div>
                 </div>
+                <div class="eprow cgff" >
+                    <div class="cgff eplabelpass">
+                        New Password
+                    </div>
+                    <div class="epinput ">
+                        <input class="epinputpass" type="password" name="Password" placeholder="Your new password" value="">
+                    </div>
+                </div>
+
+            </div>
+            <div style="width:100%">
+                <button id="epsave"  class="round brbutton">
+                    Save
+                </button>
             </div>
         </ion-content>
 

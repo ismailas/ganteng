@@ -4,10 +4,71 @@
             <div class="buttons">
                 <button ui-sref="profile" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
             </div>
-            <h1 class="title">Histori Donor</h1>
+            <h1 class="title">Donation History</h1>
         </ion-header-bar>
         <ion-content class="has-header">
-            Some content!
+            <!-- Some content! -->
+
+            <div class="cgff ehbar">
+                <div class="ehbarprop">
+                    Last Donation</br>
+                    <i>{{ user.lastdonate | date : "d MMMM yyyy"}}</i>
+                    <span>{{waktu}} </span>
+                </div>
+                <div class="ehbarbutton">
+                    <button ng-click="addHistori = !addHistori" id="ehadd" type="button" class="redbutton "><i class="icon ion-plus-round"></i></button>
+                </div>
+            </div>
+            <div class="cgff ehinput" ng-show="addHistori">
+                <input class="cgff" id="ehinputdate" type="date" name="name" value="12/08/2016">
+                <button class="cgff redbutton" id="ehinputbutton" type="submit" name="button">Add</button>
+            </div>
+            <div class="ehlist">
+                <div class="" ng-repeat="histori in user.histori | orderBy : '-hisdate'">
+
+                    <div ng-class="histori.type == 'private'? 'ehitem2' : 'ehitem'"   >
+                        <button  class="cgff ehnumber">
+                            {{user.jumdon + $index + 1}}
+                        </button>
+                        <div  class="cgff ehistori"  >
+                            <div class="textellipsis evtitle">
+                                <!-- Donor Bersama Bapak Mahdan dengan tema "Semua adalah Pengetahuan Umum" -->
+                                {{histori.evname}}
+                            </div>
+                            <div  class="textellipsis evaddress">
+                                <!-- Jl.Sangkuriang C2, Bandung -->
+                                {{histori.address}}
+                            </div>
+                            <div class="evdate">
+                                {{histori.hisdate | date : "d MMMM yyyy"}}
+                                <span class="evstatus"> {{timeStamp(histori.hisdate)}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="ehitem2" ng-repeat="histori in user.histori | orderBy : 'hisdate'"  >
+                    <div  class="cgff ehnumber2">
+                        {{user.jumdon + $index + 1}}
+                    </div>
+                    <div  class="cgff ehistori"  >
+                        <div class="evdate">
+                            {{histori.hisdate | date : "d MMMM yyyy"}}
+                            <span class="evstatus"> {{timeStamp(histori.hisdate)}} </span>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="ehitem2">
+                    <div  class="cgff ehnumber2">
+                        1-{{user.jumdon}}
+                    </div>
+                    <div  class="cgff ehistori" >
+                        <div class="evdate" ng-if="user.histori[0].type == 'event'">
+                            {{user.lastdonate | date : "d MMMM yyyy"}}
+                            <span class="evstatus"> {{timeStamp(user.lastdonate)}} </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ion-content>
     </ion-content>
 </ion-view>

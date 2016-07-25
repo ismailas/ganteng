@@ -36,15 +36,18 @@
             </div>
             <div id="evbar" class="cgff">
                 <div id="evproperties" class="">
-                    <button class="cgff round redbutton evdonate">
+                    <button ng-show="statuscheck" ng-click="statuscheck = !statuscheck" class="cgf round redbutton evdonate">
                         Donate
+                    </button>
+                    <button ng-show="!statuscheck" ng-click="statuscheck = !statuscheck" class="cgff round statusinactive evdonate2">
+                        Donate</br><i>23 days left</i>
                     </button>
 
                     <!-- <div id="evtitle" class="evellipsis">
                         Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
                     </div> -->
 
-                    <div class="evtitle" class="">
+                    <div class="evtitle" class="newellipsis">
                         Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
                     </div>
                     <div class="evorganizer">

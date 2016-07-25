@@ -1,7 +1,7 @@
 <ion-view hide-nav-bar="true" title="Menu" id="menupage" class=" ">
     <ion-content padding="true" class="cgff bakgr2">
         <div >
-            <div style="margin:10px 0 0 10px; display:inline-block" ng-click="statuscheck = !statuscheck">
+            <div id="brlogomenu" ng-click="statuscheck = !statuscheck">
                 <img src="img/brlogo2.png" height="25px" style="display: inline;">
             </div>
             <div id="btnlogoutsetting">
@@ -15,21 +15,21 @@
             <!-- <div id="namauser">
                 {{ name }}
             </div> -->
-            <div id="ppstatus" class="round">
+            <!-- <div id="ppstatus" class="round"> -->
                 <!-- foto profil -->
-                <button id="pprofil" ui-sref="profile" class="round">
-                    <img id="imgprofil"  src={{pimg}}>
-                </button>
-            </div>
+                <div id="pprofil" ui-sref="profile" class="round">
+                    <img id="imgprofil"  src={{user.foto}}>
+                </div>
+            <!-- </div> -->
             <div id="profilproperties" class="">
                 <div class="">
                     <!-- status -->
                     <div class="pproperties">
                         <div id="statusdonor">
-                            <div id="status-check" >
-                                <!-- <i ng-show="statuscheck" class="icon ion-checkmark-round"></i> -->
-                                <!-- <i ng-show="statuscheck" class="icon ion-close-round"></i> -->
-                                <i class="icon" ng-class="statuscheck ? 'ion-checkmark-round' : 'ion-close-round'"></i>
+                            <div class="cgff pprop round"  >
+                                <i id="ppcheck" ng-show="statuscheck" class="icon ion-checkmark-round"></i>
+                                <i id="ppcross" ng-show="!statuscheck" class="icon ion-close-round"></i>
+                                <!-- <i class="icon" ng-class="statuscheck ? 'ion-checkmark-round' : 'ion-close-round'"></i> -->
                                 <!-- {{ status }} -->
                             </div>
                         </div>
@@ -37,15 +37,15 @@
                     </div>
                     <!-- jumlah donasi -->
                     <div class="pproperties">
-                        <div id="jumdon" class="cgff " >
-                            {{jumdon}}
+                        <div class="cgff pprop round" >
+                            {{user.jumdon}}
                         </div>
                         <p class="ketproperties">Donation</p>
                     </div>
                     <!-- golongan darah -->
                     <div class="pproperties">
-                        <div id="golongandarah" class="cgff">
-                            {{goldar}}
+                        <div  class="cgff pprop round">
+                            {{user.goldar}}
                         </div>
                         <p class="ketproperties">Type</p>
                     </div>
