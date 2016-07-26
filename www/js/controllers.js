@@ -86,12 +86,17 @@ angular.module('app.controllers', [])
             "jumdon"    : 6,
             "status"    : true,
             "foto"      : "img/chelsea.jpg",
-            "birthdate" : "2 Juni 1995",
+            "birthdate" :  Date.create("2 June 1995"),
             "email"     : "chelseaislan@gmail.com",
             "password"  : "inichelsea123",
             "lastdonate"   : Date.create("2 July 2016"),
 
     };
+
+    $scope.submit = function(){
+        
+
+    }
 
 })
 
@@ -132,13 +137,15 @@ angular.module('app.controllers', [])
             "firstname"     : "Chelsea",
             "lastname"      : "Islan",
             "goldar"        : "A",
-            "jumdon"        : 6,
+            "firstjumdon"   : 6,
+            "firstlastdonation" : Date.create("2 August 2015"),
             "status"        : true,
             "foto"          : "img/chelsea.jpg",
             "birthdate"     : "2 Juni 1995",
             "email"         : "chelseaislan@gmail.com",
             "password"      : "inichelsea123",
             "lastdonate"    : Date.create("2 August 2015"),
+            "jumdon"        : 9,
             "histori"       : [
             {
                 "type"      : "event",
@@ -167,6 +174,20 @@ angular.module('app.controllers', [])
         return $scope.timelapse;
     };
 
+
+    $scope.newdate = Date.create("today");
+    $scope.submit = function() {
+        if ($scope.newdate) {
+          $scope.user.histori.push({
+              hisdate : this.newdate,
+              type    : "private"
+          });
+          $scope.newdate = Date.create("today");
+          $scope.user.jumdon = $scope.user.jumdon + 1 ;
+          console.log( $scope.user.jumdon);
+        }
+      };
+
     $scope.hiprivate = false;
     // $scope.isPrivate = function(type){
     //     if {
@@ -174,6 +195,11 @@ angular.module('app.controllers', [])
     //         return $scope.hiprivate = true;
     //     };
     // };
+    $scope.reverse = true;
+    // $scope.shorting = function() {
+    //     return $scope.short
+    // };
+
 
 })
 

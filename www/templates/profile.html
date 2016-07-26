@@ -28,13 +28,13 @@
                 </div>
             </div>
             <!-- First Name -->
-            <div>
+            <form ng-submit="submit()">
                 <div class="eprow cgff">
                     <div class="cgff eplabelpass ">
                         First Name
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.firstname}}">
+                        <input class="epinputpass cgff" type="text" name="firstname" ng-model="user.firstname">
                     </div>
                 </div>
                 <!-- Last name -->
@@ -43,16 +43,16 @@
                         Last Name
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.lastname}}">
+                        <input class="epinputpass cgff" type="text" name="lastname" ng-model="user.lastname">
                     </div>
                 </div>
                 <!-- Tanggal Lahir -->
                 <div class="eprow cgff">
-                    <div class="cgff eplabelpass">
+                    <div id="epbd" class="cgff eplabelpass">
                         Birth Date
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.birthdate}}">
+                        <input class="epinputpass cgff" type="date" name="birthdate" ng-model="user.birthdate">
                     </div>
                 </div>
                 <!-- Golongan Darah -->
@@ -61,7 +61,7 @@
                         Blood Type
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.goldar}}">
+                        <input class="epinputpass cgff" type="text" name="golongandarah" ng-model="user.goldar">
                     </div>
                 </div>
                 <!-- Email -->
@@ -70,11 +70,11 @@
                         Email
                     </div>
                     <div class="epinput ">
-                        <input class="epinputpass cgff" type="text" name="Email" value="{{user.email}}">
+                        <input class="epinputpass cgff" type="email" name="Email" ng-model="user.email">
                     </div>
                 </div>
 
-            </div>
+            </form>
             <div class="eprow cgff">
                 <div id="epepass" ng-click="editPassword = !editPassword">
                     Edit password
@@ -84,7 +84,7 @@
             <div ng-show="editPassword" class="transisi">
                 <div class="eprow cgff" >
                     <div class="cgff eplabelpass">
-                        Old Password
+                        Old
                     </div>
                     <div class="epinput ">
                         <input class="epinputpass cgff" type="password" name="Password" placeholder="Your old password" value="">
@@ -92,7 +92,7 @@
                 </div>
                 <div class="eprow cgff" >
                     <div class="cgff eplabelpass">
-                        New Password
+                        New
                     </div>
                     <div class="epinput ">
                         <input class="epinputpass" type="password" name="Password" placeholder="Your new password" value="">
@@ -101,7 +101,7 @@
 
             </div>
             <div style="width:100%">
-                <button id="epsave"  class="round brbutton">
+                <button type="submit" id="epsave"  class="round brbutton">
                     Save
                 </button>
             </div>

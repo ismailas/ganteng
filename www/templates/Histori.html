@@ -19,16 +19,16 @@
                     <button ng-click="addHistori = !addHistori" id="ehadd" type="button" class="redbutton "><i class="icon ion-plus-round"></i></button>
                 </div>
             </div>
-            <div class="cgff ehinput" ng-show="addHistori">
-                <input class="cgff" id="ehinputdate" type="date" name="name" value="12/08/2016">
-                <button class="cgff redbutton" id="ehinputbutton" type="submit" name="button">Add</button>
-            </div>
+            <form class="cgff ehinput" ng-show="addHistori" ng-submit="submit()">
+                <input class="cgff" id="ehinputdate" type="date" name="name" ng-model="newdate">
+                <input class="cgff redbutton" id="ehinputbutton" type="submit" name="button" value="Add" ng-click="addHistori = !addHistori">
+            </form>
             <div class="ehlist">
-                <div class="" ng-repeat="histori in user.histori | orderBy : '-hisdate'">
+                <div class="" ng-repeat="histori in user.histori | orderBy : 'hisdate': reverse">
 
                     <div ng-class="histori.type == 'private'? 'ehitem2' : 'ehitem'"   >
                         <button  class="cgff ehnumber">
-                            {{user.jumdon + $index + 1}}
+                            {{user.jumdon - $index }}
                         </button>
                         <div  class="cgff ehistori"  >
                             <div class="textellipsis evtitle">
@@ -58,13 +58,13 @@
                     </div>
                 </div> -->
                 <div class="ehitem2">
-                    <div  class="cgff ehnumber2">
-                        1-{{user.jumdon}}
+                    <div  class="cgff ehnumber2" ng-click="reverse = !reverse">
+                        1-{{user.firstjumdon}}
                     </div>
                     <div  class="cgff ehistori" >
                         <div class="evdate" ng-if="user.histori[0].type == 'event'">
-                            {{user.lastdonate | date : "d MMMM yyyy"}}
-                            <span class="evstatus"> {{timeStamp(user.lastdonate)}} </span>
+                            {{user.firstlastdonationlastdonate | date : "d MMMM yyyy"}}
+                            <span class="evstatus"> {{timeStamp(user.firstlastdonation)}} </span>
                         </div>
                     </div>
                 </div>
