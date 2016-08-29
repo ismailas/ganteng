@@ -50,7 +50,7 @@
                         <p class="ketproperties">Type</p>
                     </div>
                 </div>
-                <div ui-sref="profile" id="editprofile" class="cgff redbutton">
+                <div ng-click="editprof()" id="editprofile" class="cgff redbutton">
                     Edit Profile
                 </div>
             </div>
@@ -65,58 +65,11 @@
                 <i class="icon ion-android-hand"></i> BloodCall
             </li>
             <li id="tabnewsfeed" class="cgf menutab" ng-class="{'tabactive':isTabactive(2)}" ng-click="changeTab(2)" ui-sref='menu.news'>
-                <i class="icon ion-social-rss"></i> Newsfeed
+                <i class="icon ion-social-rss"></i> News
             </li>
         </ul>
         <div  >
             <ion-nav-view id="tabcontent" ></ion-nav-view>
         </div>
-        <!-- <nav-view>
-            <nav-view name="menu-event"></nav-view>
-            <nav-view name="menu-news"></nav-view>
-            <nav-view name="menu-bloodcall"></nav-view>
-        </nav-view> -->
-
-<!--
-        <ion-tabs class="tabs-icon-top tabs-color-active-positive">
-        <div id="test">
-            <ion-tab title="Event" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/menu/event">
-                <ion-nav-view name="menu-event"></ion-nav-view>
-            </ion-tab>
-            <ion-tab title="News" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/menu/news">
-                <ion-nav-view name="menu-news"></ion-nav-view>
-            </ion-tab>
-            <ion-tab title="Bloodcall" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/menu/bloodcall">
-                <ion-nav-view name="menu-bloodcall"></ion-nav-view>
-            </ion-tab>
-
-        </div>
-
-
-        </ion-tabs> -->
-
-        <!-- <div class="">
-            <button class="cgff redbutton" ui-sref="kegiatan" style="height:30px; width:177px; border:none; border-radius:30px; margin:10px 0;">
-                Blood Donation Event </button>
-            </div>
-        <div id="bclist">
-            <div id="bcbar" class="cgf col" >
-                BloodCall
-            </div>
-            <div class="bccontent">
-                <ion-item id="bcitem" ui-sref="BloodCall">
-                    BloodCall</ion-item>
-                    <ion-item id="bcitem" ui-sref="BloodCall">
-                        BloodCall</ion-item>
-
-            </div>
-
-            </div>
-            <div id="nflist">
-                <div id="nfbar" class="cgf col" >
-                    Newsfeed
-                </div>
-                <ion-item id="nfitem" ui-sref="NewsFeed"> NewsFeed</ion-item>
-            </div> -->
         </ion-content>
     </ion-view>

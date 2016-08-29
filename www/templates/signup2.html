@@ -1,32 +1,61 @@
-<ion-view hide-nav-bar="true" title="Signup2" id="signup2page" class=" ">
-    <ion-content padding="true" class="cgff">
-      <div class="reglogo">
-        <img src="img/brmini.png" width="40px" height="40px" style="display: inline;">
-        <div class="judreg">
-          <span class="regtitle cgf"> REGISTRASI </span>
+<ion-view hide-nav-bar="true" title="Signup" id="signuppage" class=" ">
+    <ion-content padding="true" class="" style="">
+        <!-- judul -->
+        <div class="reglogo">
+            <div style=" display:inline-block">
+                <img src="img/brmini.png" width="40px" height="40px" style="display: inline;">
+            </div>
+            <div class="judreg">
+                <span class="cgf regtitle"> REGISTRASI </span>
+            </div>
         </div>
-      </div>
-      <span class="input-label">Blood Type</span>
-      <ion-list id=su2list style="margin:0 auto" >
-        <ion-radio style="display:inline-block;width:22%" ng-model="choice" ng-value="'A'">A</ion-radio>
-        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="choice" ng-value="'B'">B</ion-radio>
-        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="choice" ng-value="'AB'">AB</ion-radio>
-        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="choice" ng-value="'O'">O</ion-radio>
-      </ion-list>
-      <span class="input-label">Donated Times</span>
-        <form id="signup2-form10" class="list ">
-            <label class="item item-input " id="signup2-input13">
-                <!-- <span class="input-label">Input</span> -->
-                <input type="text" placeholder="1-2">
-            </label>
-        </form>
-        <span class="input-label">Last Donation</span>
-        <label class="item item-input">
-          <input type="date" placeholder="Date">
-        </label>
-        <div class="twinbutton">
-          <button ui-sref="signup" id="signup2back" class="round brbutton">back</button>
-          <button ui-sref="signup3" id="signup2next" class="sumarginbutton round brbutton">next</button>
+
+        <div class="cgff" style="height:70%;">
+            <form id="register" class="list" role="form" ng-submit="submitUser(firstname,lastname,cabang,token,email,password)">
+                <!-- input foto profil -->
+                <div class="sumargin">
+                    <div id="su1profil" class="round">
+                        <i class="icon ion-person" id="su1ikon"></i>
+                    </div>
+                    <div id="su1profillabel">Profile photo</div>
+                </div>
+                <!-- form input profil -->
+                <span class="input-label">First Name</span>
+                <label class="item item-input " id="signup-input3">
+                    <input type="text" placeholder="First Name" ng-model="firstname">
+                </label>
+                <span class="input-label">Last Name</span>
+                <label class="item item-input " id="signup-input4">
+                    <input type="text" placeholder="Last Name" ng-model="lastname">
+                </label>
+                <span class="input-label">Cabang</span>
+                <label class="item item-input">
+                    <input type="text" placeholder="Cabang" ng-model="cabang">
+                </label>
+
+                <span class="input-label">Bloodrun Token</span>
+                <label class="item item-input " id="signup2-input13">
+                    <input type="text" placeholder="Token" ng-model="token">
+                </label>
+
+                <span class="input-label">Email</span>
+                <label class="item item-input " id="su3email">
+                    <input type="email" placeholder="Someone@somedomain.com" ng-model="email">
+                </label>
+                <span class="input-label">Password</span>
+                <label class="item item-input " id="su3pass">
+                    <input type="password" placeholder="Password" ng-model="password">
+                </label>
+                <span class="input-label">Confirm Password</span>
+                <label class="item item-input " id="su3cpass">
+                    <input type="password" placeholder="Password">
+                </label>
+
+                <div class="twinbutton">
+                    <button ui-sref="login" id="su2back" class="round brbutton">back</button>
+                    <button id="su2next" class="sumarginbutton round brbutton" type="submit">sign-up</button>
+                </div>
+            </form>
         </div>
     </ion-content>
 </ion-view>

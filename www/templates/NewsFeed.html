@@ -10,7 +10,7 @@
             <div class="nfimage">
                 <img src="/img/nfimage.jpg" width="100%" />
                 <div class="nftitle">
-                    100 Kali Donor Darah, 10 Warga Kota Bogor Terima Penghargaan
+                    {{newsfeed.nfjudul}}
                 </div>
             </div>
             <div class="cgff nfcontainer">
@@ -19,16 +19,10 @@
                     Ichsan Emrald Alamsyah
                 </div>
                 <span class="cgff nfdate">
-                    Monday, 21 December 2015, 08:32 WIB
+                    {{newsfeed.nfdate | date : "EEEE, d MMMM yyyy , h:mma"}}
                 </span>
                 <div class="nfkonten">
-                    <p>REPUBLIKA.CO.ID, BOGOR -- Sepuluh warga kota Bogor menerima Satya Lancana Kebaktian Sosial, akhir pekan lalu. Penghargaan yang diserahkan langsung oleh Presiden Republik Indonesia Joko Widodo di Istana Bogor itu diperuntukkan bagi mereka yang telah mengikuti aksi Donor Darah Sukarela hingga 100 kali.</p>
-                    <p>Para pahlawan kemanusiaan tersebut adalah Dwiyadi Budianto, Eddy Kuntadi, Enjau Langet, Gatot Sanyoto Wahyu Adi, M Taufik Rohman, Maryono, Paulus Sutanto, Rizal Andreanto, Tunas Karnadi, dan Eko Marwanto. Mereka adalah bagian dari 106 penerima penghargaan serupa di Jawa Barat.</p>
-                    <p>Wali Kota Bogor Bima Arya mengapresiasi 10 warganya yang tahun ini telah dengan sukarela melakukan aksi donor darah hingga mencapai 100 kali. Ia berharap aksi itu bisa menjadi tauladan bagi sesama.</p>
-                    <p>"Mudah-mudahan apa yang dilakukan dapat menjadi inspirasi bagi warga lain untuk terus berbuat nyata dalam aksi-aksi kemanusiaan," kata Bima, Senin (21/12).</p>
-                    <p>Kepala Unit Transfusi Darah PMI Kota Bogor Sri Pinantari mengatakan, kesadaran masyarakat di kota hujan untuk mendonorkan darah memang cukup tinggi. Sepanjang 2015, trennya tercatat meningkat secara signifikan.</p>
-                    <p>Dalam setahun, kata Sri, seseorang bisa berdonor maksimal empat kali dalam setahun. Pasalnya, donor darah diperbolehkan dalam jarak tiga bulan sekali.</p>
-                    <p>"Jika mencapai 100 kali, bisa dipastikan ia konsisten menyumbangkan darah 25 tahun tanpa henti, atau lebih. Tentu saja itu patut diapresiasi," ungkapnya.</p>
+                    {{newsfeed.nfcontent}}
                 </div>
             </div>
         </ion-content>

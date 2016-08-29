@@ -1,32 +1,214 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope) {
+.controller('loginCtrl', function($scope,$http,$state) {
+
+    $scope.email        = "";
+    $scope.password     = "";
+    $scope.login        = [];
+    // $scope.users_id     = "";
+    console.log('login');
+
+    $scope.submitLogin  = function(email,password){
+        $scope.login    = {
+            "email"     : email,
+            "password"  : password
+        };
+        console.log($scope.login);
+        $scope.postUser = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/users/login',
+                data: $scope.login
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.users_id = response.data.users_id;
+                console.log($scope.users_id);
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+        $scope.postUser();
+        $state.go('menu', {'users_id' : $scope.users_id});
+
+
+    }
+
 
 })
 
-.controller('signupCtrl', function($scope) {
+.controller('signupCtrl', function($scope,$state,$http) {
+
+    $scope.firstname    = "";
+    $scope.lastname     = "";
+    $scope.birthdate    = "";
+    $scope.goldar       = "";
+    $scope.jumdon       = "";
+    $scope.firstjumdon  = "";
+    $scope.lastdonate   = "";
+    $scope.email        = "";
+    $scope.password     = "";
+
+    $scope.signup       = [];
+
+    console.log('signup pendonor');
+
+    $scope.submitUser   = function(firstname,lastname,birthdate,goldar,jumdon,lastdonate,email,password){
+
+        $scope.signup   = {
+            "firstname"     : firstname,
+            "lastname"      : lastname,
+            "birthdate"     : birthdate,
+            "goldar"        : goldar,
+            "jumdon"        : jumdon,
+            "firstjumdon"   : jumdon,
+            "lastdonate"    : lastdonate,
+            "email"         : email,
+            "password"      : password
+        };
+        console.log($scope.signup);
+        console.log('tes');
+        $state.go('login');
+
+        $scope.postUser = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/users',
+                data: $scope.signup
+            }).then(function successCallback(response) {
+                console.log(response);
+                // response.data = $scope.signup ;
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        $scope.postUser();
+
+    }
 
 })
 
-.controller('menuCtrl', function($scope, $state, $rootScope) {
+.controller('signup2Ctrl', function($scope,$state) {
+
+    $scope.firstname    = "";
+    $scope.lastname     = "";
+    $scope.cabang       = "";
+    $scope.token        = "";
+    $scope.email        = "";
+    $scope.password     = "";
+
+    $scope.signup       = [];
+
+    console.log('signup PMI');
+
+    $scope.submitUser   = function(firstname,lastname,cabang,token,email,password){
+
+        $scope.signup   = {
+            "firstname"     : firstname,
+            "lastname"      : lastname,
+            "cabang"        : cabang,
+            "token"         : token,
+            "email"         : email,
+            "password"      : password
+        };
+        console.log($scope.signup);
+        console.log('tes');
+        $state.go('login');
+
+    }
+
+})
+
+.controller('signup3Ctrl', function($scope,$stateParams,$state,$http) {
+
+    $scope.firstname    = $stateParams.signup2.firstname;
+    $scope.lastname     = $stateParams.signup2.lastname;
+    $scope.birthdate    = $stateParams.signup2.birthdate;
+    $scope.goldar       = $stateParams.signup2.goldar;
+    $scope.jumdon       = $stateParams.signup2.jumdon;
+    $scope.firstjumdon  = $stateParams.signup2.firstjumdon;
+    $scope.lastdonate   = $stateParams.signup2.lastdonate;
+    $scope.email        = "";
+    $scope.password     = "";
+    $scope.copassword   = "";
+    console.log("signup3");
+    console.log($stateParams.signup2);
+
+    $scope.submitUser   = function(){
+        $scope.signup3   = {
+            "firstname"     : $scope.firstname,
+            "lastname"      : $scope.lastname,
+            "birthdate"     : $scope.birthdate,
+            "goldar"        : $scope.goldar,
+            "jumdon"        : $scope.jumdon,
+            "firstjumdon"   : $scope.firstjumdon,
+            "lastdonate"    : $scope.lastdonate,
+            "email"         : $scope.email,
+            "password"      : $scope.password
+        };
+
+        console.log($scope.signup3);
+    }
+
+
+
+})
+
+.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope) {
     // username
     $scope.name = "Sumail Abdush";
     $scope.statuscheck  = true;
     $scope.tabcheck = 0 ;
 
     $scope.user = {
-            "firstname" : "Chelsea",
-            "lastname"  : "Islan",
-            "goldar"    : "A",
-            "jumdon"    : 9,
-            "status"    : true,
-            "foto"      : "img/chelsea.jpg",
-            "birthdate" : "2 Juni 1995",
-            "email"     : "chelseaislan@gmail.com",
-            "password"  : "inichelsea123",
-            "lastdonate"   : Date.create("2 August 2015"),
+        "firstname" : "Chelsea",
+        "lastname"  : "Islan",
+        "goldar"    : "A",
+        "jumdon"    : 9,
+        "status"    : true,
+        "foto"      : "img/chelsea.jpg",
+        "birthdate" : "2 Juni 1995",
+        "email"     : "chelseaislan@gmail.com",
+        "password"  : "inichelsea123",
+        "lastdonate"   : Date.create("2 August 2015"),
 
     };
+    console.log('menu');
+    console.log($stateParams.users_id);
+    $scope.urlx = "http://localhost:3000/users/" + $stateParams.users_id.toString();
+    console.log($scope.urlx);
+    $scope.getuser = function() {
+        $http({
+            method: 'GET',
+            url: $scope.urlx
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.user = response.data;
+            console.log($scope.user);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getuser();
+
+    $scope.changeState  = function(user_id) {
+        if ($stateParams.users_id == ''){
+            $state.go('login');
+        } else {
+            $state.go('menu.event');
+        }
+
+    }
+
+    $scope.changeState();
+    $scope.editprof = function (){
+        $state.go('profile', {'users_id' : $scope.user.users_id});
+
+    }
 
     $scope.changeTab = function(newTab){
         $scope.tabcheck = newTab;
@@ -51,64 +233,85 @@ angular.module('app.controllers', [])
 
     $scope.changeStatus = function() {
         if (today - user.lastdonate >= 90) {
-          $scope.status = "ready";
+            $scope.status = "ready";
         }
         else {
-          $scope.status = today - user.lastdonate + "left";
+            $scope.status = today - user.lastdonate + "left";
         }
     };
 
     // golongan darah
-    $scope.goldar = "A";
+    // $scope.goldar = "A";
 
     $scope.changeGoldar = function(){};
 
     // jumlah donasi
-    $scope.jumdon = 9;
+    // $scope.jumdon = 9;
 
     $scope.changeJumdon = function(){};
 
-    $state.go('menu.event');
+
 
 
 })
 
 
 
-.controller('profileCtrl', function($scope) {
+.controller('profileCtrl', function($scope,$state,$stateParams,$http) {
 
     $scope.editPassword = false;
 
     $scope.user = {
-            "firstname" : "Chelsea",
-            "lastname"  : "Islan",
-            "goldar"    : "A",
-            "jumdon"    : 6,
-            "status"    : true,
-            "foto"      : "img/chelsea.jpg",
-            "birthdate" :  Date.create("2 June 1995"),
-            "email"     : "chelseaislan@gmail.com",
-            "password"  : "inichelsea123",
-            "lastdonate"   : Date.create("2 July 2016"),
+        "firstname" : "Chelsea",
+        "lastname"  : "Islan",
+        "goldar"    : "A",
+        "jumdon"    : 6,
+        "status"    : true,
+        "foto"      : "img/chelsea.jpg",
+        "birthdate" :  Date.create("2 June 1995"),
+        "email"     : "chelseaislan@gmail.com",
+        "password"  : "inichelsea123",
+        "lastdonate"   : Date.create("2 July 2016"),
 
     };
 
     $scope.submit = function(){
-        
+
+
+    };
+
+    console.log('profile');
+    console.log($stateParams.users_id);
+    $scope.urlx = "http://localhost:3000/users/" + $stateParams.users_id.toString();
+    console.log($scope.urlx);
+    $scope.getuser = function() {
+        $http({
+            method: 'GET',
+            url: $scope.urlx
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.user = response.data;
+            console.log($scope.user);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getuser();
+
+    $scope.changeState  = function(user_id) {
+        if ($stateParams.users_id == ''){
+            $state.go('login');
+        }
 
     }
 
-})
-
-.controller('signup2Ctrl', function($scope) {
-
-
+    $scope.changeState();
 
 })
 
-.controller('signup3Ctrl', function($scope) {
 
-})
 
 .controller('settingCtrl', function($scope) {
 
@@ -118,12 +321,64 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('BloodCallCtrl', function($scope) {
+.controller('BloodCallCtrl', function($scope,$http,$stateParams,$state) {
+    console.log($stateParams.bloodcall_id);
+    $scope.url_bc = "http://localhost:3000/bloodcall/" + $stateParams.bloodcall_id.toString() ;
+    $scope.getbc = function() {
+        $http({
+            method: 'GET',
+            url: $scope.url_bc
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.bloodcall = response.data;
+            console.log($scope.bloodcall);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getbc();
+
+    $scope.changeState  = function(bloodcall_id) {
+        if ($stateParams.bloodcall_id == ''){
+            $state.go('menu');
+        }
+
+    }
+
+    $scope.changeState();
 
 })
 
-.controller('NewsFeedCtrl', function($scope) {
+.controller('NewsFeedCtrl', function($scope,$http,$stateParams,$state) {
+    console.log($stateParams.newsfeed_id);
+    $scope.url_nf = "http://localhost:3000/newsfeed/" + $stateParams.newsfeed_id.toString() ;
+    console.log($scope.url_nf);
+    $scope.getnf = function() {
+        $http({
+            method: 'GET',
+            url: $scope.url_nf
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.newsfeed = response.data;
+            console.log($scope.newsfeed);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
 
+    $scope.getnf();
+
+    $scope.changeState  = function(newsfeed_id) {
+        if ($stateParams.newsfeed_id == ''){
+            $state.go('menu');
+        }
+
+    }
+
+    $scope.changeState();
 })
 
 .controller('ForgotPassCtrl', function($scope) {
@@ -134,19 +389,19 @@ angular.module('app.controllers', [])
     $scope.addHistori = false;
 
     $scope.user = {
-            "firstname"     : "Chelsea",
-            "lastname"      : "Islan",
-            "goldar"        : "A",
-            "firstjumdon"   : 6,
-            "firstlastdonation" : Date.create("2 August 2015"),
-            "status"        : true,
-            "foto"          : "img/chelsea.jpg",
-            "birthdate"     : "2 Juni 1995",
-            "email"         : "chelseaislan@gmail.com",
-            "password"      : "inichelsea123",
-            "lastdonate"    : Date.create("2 August 2015"),
-            "jumdon"        : 9,
-            "histori"       : [
+        "firstname"     : "Chelsea",
+        "lastname"      : "Islan",
+        "goldar"        : "A",
+        "firstjumdon"   : 6,
+        "firstlastdonation" : Date.create("2 August 2015"),
+        "status"        : true,
+        "foto"          : "img/chelsea.jpg",
+        "birthdate"     : "2 Juni 1995",
+        "email"         : "chelseaislan@gmail.com",
+        "password"      : "inichelsea123",
+        "lastdonate"    : Date.create("2 August 2015"),
+        "jumdon"        : 9,
+        "histori"       : [
             {
                 "type"      : "event",
                 "evname"    : "Donor Bersama Bapak Mahdan",
@@ -178,15 +433,15 @@ angular.module('app.controllers', [])
     $scope.newdate = Date.create("today");
     $scope.submit = function() {
         if ($scope.newdate) {
-          $scope.user.histori.push({
-              hisdate : this.newdate,
-              type    : "private"
-          });
-          $scope.newdate = Date.create("today");
-          $scope.user.jumdon = $scope.user.jumdon + 1 ;
-          console.log( $scope.user.jumdon);
+            $scope.user.histori.push({
+                hisdate : this.newdate,
+                type    : "private"
+            });
+            $scope.newdate = Date.create("today");
+            $scope.user.jumdon = $scope.user.jumdon + 1 ;
+            console.log( $scope.user.jumdon);
         }
-      };
+    };
 
     $scope.hiprivate = false;
     // $scope.isPrivate = function(type){
@@ -203,9 +458,39 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('EventCtrl',function($scope){
+.controller('EventCtrl',function($scope,$http,$stateParams,$state){
     // $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
     $scope.statuscheck = false;
+
+    console.log($stateParams.event_id);
+    $scope.url_ev = "http://localhost:3000/event/" + $stateParams.event_id.toString() ;
+    console.log($scope.url_ev);
+    $scope.getev = function() {
+        $http({
+            method: 'GET',
+            url: $scope.url_ev
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.events = response.data;
+            $scope.waktu = Date.create($scope.events.evdate).relative();
+            console.log($scope.events);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getev();
+
+    $scope.changeState  = function(event_id) {
+        if ($stateParams.event_id == ''){
+            $state.go('menu');
+        }
+
+    }
+
+    $scope.changeState();
+
 })
 
 .controller('AboutCtrl',function($scope){
@@ -216,19 +501,90 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('eventlistCtrl',function($scope){
+.controller('eventlistCtrl',function($scope,$http,$state){
     // $scope.isClicked = "true";
     // $scope.itemClicked = function(){
     //     $scope.isClicked = "false";
     // };
+
+    $scope.getEVlist = function() {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:3000/event'
+        }).then(function successCallback(response) {
+            console.log(response);
+            console.log('callback berhasil');
+            $scope.evlist = [];
+
+            _.each(response.data.rows, function(value, key) {
+                value.waktu = Date.create(value.evdate).relative();
+                $scope.evlist.push(value);
+            });
+
+            console.log($scope.evlist);
+            // $scope.waktu = Date.create($scope.evlist.evdate).relative();
+        }, function errorCallback(response) {
+            console.log('wah error');
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+    $scope.getEVlist();
+
+    $scope.changeState  = function(event_id) {
+        $state.go('Event', {'event_id' : event_id});
+    }
+
 })
 
-.controller('newsfeedlistCtrl',function($scope){
+.controller('newsfeedlistCtrl',function($scope,$http,$state){
+
+    $scope.getnflist = function() {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:3000/newsfeed'
+        }).then(function successCallback(response) {
+            console.log(response);
+            console.log('callback berhasil');
+            $scope.nflist = response.data.rows;
+        }, function errorCallback(response) {
+            console.log('wah error');
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getnflist();
+
+    $scope.changeState  = function(newsfeed_id) {
+        $state.go('NewsFeed', {'newsfeed_id' : newsfeed_id});
+    }
 
 })
 
-.controller('bloodcalllistCtrl',function($scope){
+.controller('bloodcalllistCtrl',function($scope, $http, $state){
 
+
+    $scope.getBClist = function() {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:3000/bloodcall'
+        }).then(function successCallback(response) {
+            console.log(response);
+            console.log('callback berhasil');
+            $scope.BClist = response.data.rows;
+        }, function errorCallback(response) {
+            console.log('wah error');
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getBClist();
+
+    $scope.changeState  = function(bloodcall_id) {
+        $state.go('BloodCall', {'bloodcall_id' : bloodcall_id});
+    }
 })
 
 // .controller('MapController', function($scope, $ionicLoading) {

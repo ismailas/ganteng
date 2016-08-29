@@ -48,17 +48,17 @@
                     </div> -->
 
                     <div class="evtitle" class="newellipsis">
-                        Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
+                        {{events.evname}}
                     </div>
                     <div class="evorganizer">
-                        Mahdan Corp
+                        {{events.evorganizer}}
                     </div>
                     <div class="evaddress">
-                        Jl.Sangkuriang C2, Bandung
+                        {{events.evaddress}}
                     </div>
                     <div class="evdate">
-                        14 Agustus 2016
-                        <span class="evstatus"> 9 days left </span>
+                        {{events.evdate | date : "d MMMM yyyy"}}
+                        <span class="evstatus"> {{waktu}} </span>
                     </div>
                     <!-- <div id="evket">
                         Belakang LIPI

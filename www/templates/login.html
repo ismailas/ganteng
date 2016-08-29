@@ -4,26 +4,35 @@
             <img src="img/brlogo.png" width="200px" height="200px" class="brlogo">
         </div>
         <!-- form -->
-        <form id="login-form1" class="list ">
+        <form id="login" class="list" name = "login" ng-submit="submitLogin(email,password)">
             <div class="spacer" style="width: 300px; height: 25px;"></div>
             <ion-list id="login-list1" class=" ">
               <!-- email -->
                 <span style="color:white;" class="cgf input-label">Email</span>
                 <label class="item item-input " id="login-email">
-                    <input type="text" placeholder="someone@somedomain.com">
+                    <input type="text" placeholder="someone@somedomain.com" ng-model="email">
                 </label>
                 <!-- password -->
                 <span style="color:white;" class="cgf input-label">Password</span>
                 <label class="item item-input " id="login-password">
-                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="password" ng-model="password">
                 </label>
             </ion-list>
             <!-- <div class="spacer" style="height: 40px;"></div> -->
-            <div class="twinbutton">
+            <div class="twinbutton2">
               <button style="background-color:#E4E4E4; color:black; " ui-sref="signup" id="signup3back" class="round brbutton">Sign-up</button>
-              <button style="background-color:#660E0E; margin-left:60px;" ui-sref="menu" id="signup3sign" class="round brbutton">Login</button>
+              <button style="background-color:#660E0E; margin-left:60px;" type="submit" id="signup3sign" class="round brbutton">Login</button>
             </div>
-            <a style="color:white" ui-sref="ForgotPass" id="forgotpasslink" class=" button button-positive  button-block button-clear ">Forgot Password?</a>
+            <div class="link">
+                <a class="forgetpas" ui-sref="ForgotPass">Forgot Password?</a>
+                <div class="pmireg">
+                    <a class="forgetpas" ui-sref="signup2"> PMI Register </a>
+                </div>
+            </div>
+            <!-- <a style="color:white"  id="forgotpasslink" class=" button button-positive  button-block button-clear ">
+                <span ></span><span ></span>
+            </a>
+            <a style="color:white"  id="signup2" class=" button button-positive  button-block button-clear ">PMI Register</a> -->
             <!-- <a ui-sref="menu" id="login-button1" class=" button button-stable  button-block ">Log in</a>
             <a ui-sref="signup" id="login-button2" class=" button button-positive  button-block button-clear ">Or create an account</a> -->
         </form>

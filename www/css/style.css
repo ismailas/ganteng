@@ -123,7 +123,13 @@
 .twinbutton{
     width:260px;
     display: flex;
-    margin:30px auto 0;
+    margin:30px auto 30px;
+}
+
+.twinbutton2{
+    width:260px;
+    display: flex;
+    margin:30px auto 10px;
 }
 
 .scroll {
@@ -189,9 +195,48 @@
     vertical-align: middle;
 }
 
-/*signup 2*/
+#register span {
+    /*background-color: yellow;*/
+    margin-top: 10px;
+    width: 100%;
+    /*border-top: solid 1px #D4D4D4;*/
+}
 
+#su2list span {
+    margin-top: 0;
+    border-top: none;
+}
 
+.radiogd {
+    display:inline-block;
+    width:22%
+}
+
+/*login*/
+
+#login .link {
+    text-align: center;
+}
+
+.forgetpas {
+    color: white;
+    text-decoration: none;
+}
+
+.pmireg{
+    color: white;
+    background-color: black;
+    font-style: none;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 5px auto;
+    width: 115px;
+}
+
+.pmireg:active {
+    background-color: #1C1C1C;
+}
 
 /*about*/
 

@@ -16,11 +16,7 @@ angular.module('app.routes', [])
         controller: 'loginCtrl'
     })
 
-    .state('signup', {
-        url: '/signuppage',
-        templateUrl: 'templates/signup.html',
-        controller: 'signupCtrl'
-    })
+
 
     .state('menu', {
         url: '/menu',
@@ -28,6 +24,9 @@ angular.module('app.routes', [])
         // abstract : true,
         controller: 'menuCtrl',
         templateUrl: 'templates/menu.html',
+        params: {
+            users_id    : '',
+        }
     })
 
     .state('menu.event', {
@@ -63,19 +62,34 @@ angular.module('app.routes', [])
     .state('profile', {
         url: '/profilepage',
         templateUrl: 'templates/profile.html',
-        controller: 'profileCtrl'
+        controller: 'profileCtrl',
+        params: {
+            users_id    : '',
+        }
+    })
+
+    .state('signup', {
+        url: '/signuppage',
+        templateUrl: 'templates/signup.html',
+        controller: 'signupCtrl'
     })
 
     .state('signup2', {
         url: '/signup2page',
         templateUrl: 'templates/signup2.html',
-        controller: 'signup2Ctrl'
+        controller: 'signup2Ctrl',
+        params: {
+            signup    : '',
+        }
     })
 
     .state('signup3', {
         url: '/signup3page',
         templateUrl: 'templates/signup3.html',
-        controller: 'signup3Ctrl'
+        controller: 'signup3Ctrl',
+        params: {
+            signup2    : '',
+        }
     })
 
     .state('setting', {
@@ -93,13 +107,19 @@ angular.module('app.routes', [])
     .state('BloodCall', {
         url: '/BloodCallpage',
         templateUrl: 'templates/BloodCall.html',
-        controller: 'BloodCallCtrl'
+        controller: 'BloodCallCtrl',
+        params: {
+            bloodcall_id    : '',
+        }
     })
 
     .state('NewsFeed', {
         url: '/NewsFeedpage',
         templateUrl: 'templates/NewsFeed.html',
-        controller: 'NewsFeedCtrl'
+        controller: 'NewsFeedCtrl',
+        params: {
+            newsfeed_id    : '',
+        }
     })
 
     .state('ForgotPass', {
@@ -112,13 +132,16 @@ angular.module('app.routes', [])
         url: '/Historipage',
         templateUrl: 'templates/Histori.html',
         controller: 'HistoriCtrl',
-        
+
     })
 
     .state('Event', {
         url: '/Eventpage',
         templateUrl: 'templates/Event.html',
-        controller: 'EventCtrl'
+        controller: 'EventCtrl',
+        params: {
+            event_id    : '',
+        }
     })
 
     .state('about', {

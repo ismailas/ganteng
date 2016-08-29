@@ -9,18 +9,16 @@
         <ion-content padding="true" class="has-header">
             <div class="cgff bccontainer">
                 <div class="bcgoldar">
-                    AB Dibutuhkan Segera!
+                    {{bloodcall.bcgoldar}} Dibutuhkan Segera!
                 </div>
                 <div class="bcatasnama">
-                    Atas Nama ibu Retno
+                    Atas Nama {{bloodcall.bcatasnama}}
                 </div>
                 <button class="bctanggal">
-                    05/08/2016
+                    {{bloodcall.bcdate | date : "d MMMM yyyy"}}
                 </button>
                 <div class="bcketerangan">
-                    Bantuan dapat dilakukan dengan menghubungi nomor 081122334455
-                    atau bisa langsung ke Rumah Sakit Hasan Sadikin Bandung,
-                    Jalan Pasir Kaliki No 12 dan menghubungi Ruang Gawat Darurat No 23.
+                    {{bloodcall.bcketerangan}}
                 </div>
             </div>
         </ion-content>

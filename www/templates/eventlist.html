@@ -1,24 +1,15 @@
-<div  class="cgff evitem"  ui-sref="Event">
+<div ng-repeat="item in evlist | orderBy : evdate " class="cgff evitem"  ng-click="changeState(item.event_id)">
     <div class="textellipsis evtitle">
-        Donor Bersama Bapak Mahdan dengan tema "Semua adalah Pengetahuan Umum"
+        {{item.evname}}
     </div>
     <div  class="textellipsis evaddress">
-        Jl.Sangkuriang C2, Bandung
+        {{item.evaddress}}
     </div>
     <div class="evdate">
-        14 Agustus 2016
-        <span class="evstatus"> 9 days left </span>
+        {{item.evdate | date : "d MMMM yyyy"}}
+        <span class="evstatus"> {{item.waktu}} </span>
     </div>
 </div>
-<div  class="cgff evitem"  ui-sref="Event">
-    <div class="textellipsis evtitle">
-        Donor Bersama Bapak Mahdan dengan tema "Semua adalah Pengetahuan Umum"
-    </div>
-    <div  class="textellipsis evaddress">
-        Jl.Sangkuriang C2, Bandung
-    </div>
-    <div class="evdate">
-        14 Agustus 2016
-        <span class="evstatus"> 9 days left </span>
-    </div>
+<div class="">
+
 </div>

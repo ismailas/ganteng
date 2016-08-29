@@ -1,47 +1,13 @@
-<div class="cgff evitem" ui-sref="BloodCall">
+<div ng-repeat="item in BClist | orderBy : bcdate" class="cgff evitem" ng-click="changeState(item.bloodcall_id)">
     <div class="textellipsis evtitle">
-        AB Dibutuhkan Segera!
+        {{item.bcgoldar}} dibutuhkan segera!
     </div>
     <div class="evaddress">
-        Atas Nama ibu Retno
+        Atas Nama {{item.bcatasnama}}
     </div>
     <span class="evdate">
-        14 Agustus 2016
-    </span>
-</div>
-<!--
-<ion-item id="bcitem" ui-sref="BloodCall">
-    <div class="bcgoldar">
-        AB Dibutuhkan Segera!
-    </div>
-    <div class="bcatasnama">
-        Atas Nama ibu Retno
-    </div>
-    <button class="bctanggal">
-        05/08/2016
-    </button>
-</ion-item> -->
-
-<div class="cgff evitem" ui-sref="BloodCall">
-    <div class="textellipsis evtitle">
-        AB Dibutuhkan Segera!
-    </div>
-    <div class="evaddress">
-        Atas Nama ibu Retno
-    </div>
-    <span class="evdate">
-        14 Agustus 2016
+        {{item.bcdate | date : "d MMMM yyyy"}}
     </span>
 </div>
 
-<div class="cgff evitem" ui-sref="BloodCall">
-    <div class="textellipsis evtitle">
-        AB Dibutuhkan Segera!
-    </div>
-    <div class="evaddress">
-        Atas Nama ibu Retno
-    </div>
-    <span class="evdate">
-        14 Agustus 2016
-    </span>
-</div>
+<div></div>

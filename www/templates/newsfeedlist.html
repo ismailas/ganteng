@@ -1,29 +1,18 @@
-<div class="">
+<div ng-repeat="item in nflist | orderBy : nfdate" class="" ng-click="changeState(item.newsfeed_id)">
     <div class="nflistimg">
         <img src="/img/nfimage.jpg" class="nflistimage" alt="" />
     </div>
-    <div class="nfitem evitem" ui-sref="NewsFeed">
+    <div class="nfitem evitem" >
         <div class="newellipsis nftitlelist">
-            100 Kali Donor Darah, 10 Warga Kota Bogor Terima Penghargaan
+            {{item.nfjudul}}
         </div>
         <span class="cgff nfdate">
-            Monday, 21 December 2015
+            {{item.nfdate | date : "EEEE, d MMMM yyyy"}}
         </span>
     </div>
 
 </div>
 <div class="">
-    <div class="nflistimg">
-        <img src="/img/nfimage.jpg" class="nflistimage" alt="" />
-    </div>
-    <div class="nfitem evitem" ui-sref="NewsFeed">
-        <div class="newellipsis nftitlelist">
-            100 Kali Donor Darah, 10 Warga Kota Bogor Terima Penghargaan
-        </div>
-        <span class="cgff nfdate">
-            Monday, 21 December 2015
-        </span>
-    </div>
 
 </div>
 <!-- <ion-item id="nfitem" ui-sref="NewsFeed"> NewsFeed</ion-item> -->
