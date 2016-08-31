@@ -5,26 +5,22 @@
                 <img src="img/brlogo2.png" height="25px" style="display: inline;">
             </div>
             <div id="btnlogoutsetting">
+                <button ui-sref="selfcheck" id="selfcheck"  class="smallbrbutton"><i class="icon ion-heart"></i></button>
                 <button ui-sref="setting"  class="smallbrbutton"><i class="icon ion-gear-b"></i></button>
                 <button ui-sref="login"  class="smallbrbutton"><i class="icon ion-power"></i></button>
             </div>
         </div>
         <div id="brprofil">
         <div id="brprof" class="cgff " >
-            <!-- nama user -->
-            <!-- <div id="namauser">
-                {{ name }}
-            </div> -->
-            <!-- <div id="ppstatus" class="round"> -->
                 <!-- foto profil -->
                 <div id="pprofil" ui-sref="profile" class="round">
                     <img id="imgprofil"  src={{user.foto}}>
                 </div>
             <!-- </div> -->
             <div id="profilproperties" class="">
-                <div class="">
+                <div class="" ng-show="!user.typeuser">
                     <!-- status -->
-                    <div class="pproperties">
+                    <div class="pproperties" >
                         <div id="statusdonor">
                             <div class="cgff pprop round"  >
                                 <i id="ppcheck" ng-show="statuscheck" class="icon ion-checkmark-round"></i>
@@ -48,6 +44,31 @@
                             {{user.goldar}}
                         </div>
                         <p class="ketproperties">Type</p>
+                    </div>
+                </div>
+                <div class="" ng-show="user.typeuser">
+                    <!-- status -->
+                    <div class="pproperties">
+                        <div id="statusdonor">
+                            <div class="cgff pprop2 round"  >
+                                <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputEV()"></button>
+                            </div>
+                        </div>
+                        <p class="ketproperties">Event</p>
+                    </div>
+                    <!-- jumlah donasi -->
+                    <div class="pproperties">
+                        <div class="cgff pprop2 round" >
+                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputBC()"></button>
+                        </div>
+                        <p class="ketproperties">Bloodcall</p>
+                    </div>
+                    <!-- golongan darah -->
+                    <div class="pproperties">
+                        <div  class="cgff pprop2 round">
+                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputNF()"></button>
+                        </div>
+                        <p class="ketproperties">News</p>
                     </div>
                 </div>
                 <div ng-click="editprof()" id="editprofile" class="cgff redbutton">

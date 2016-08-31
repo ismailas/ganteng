@@ -1,4 +1,4 @@
-<div ng-repeat="item in evlist | orderBy : evdate " class="cgff evitem"  ng-click="changeState(item.event_id)">
+<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in evlist | orderBy : evdate " class="cgff evitem"  ng-click="changeState(item.event_id)">
     <div class="textellipsis evtitle">
         {{item.evname}}
     </div>

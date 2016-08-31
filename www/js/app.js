@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives','ngMap','ionic-native-transitions'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives','ngMap','ionic-native-transitions','LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -39,4 +39,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         triggerTransitionEvent: '$ionicView.afterEnter', // internal ionic-native-transitions option
         backInOppositeDirection: false // Takes over default back transition and state back transition to use the opposite direction transition to go back
     });
+})
+
+.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('app')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true)
 });

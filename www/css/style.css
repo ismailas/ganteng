@@ -237,7 +237,9 @@
 .pmireg:active {
     background-color: #1C1C1C;
 }
-
+.pemilik{
+    background-color: lightblue;
+}
 /*about*/
 
 #aboutemail{
@@ -249,6 +251,23 @@
 }
 
 /*main menu*/
+
+.addbutton{
+    width: 36px;
+    height: 36px;
+}
+
+#selfcheck{
+    background-color: #1c1c1c;
+}
+
+.pendonor{
+    background-color: yellow;
+}
+
+.pmi{
+    background-color: lightblue;
+}
 
 #brlogomenu{
     margin:10px 0 0 10px;
@@ -275,6 +294,7 @@
 
 }
 
+
 #brprof{
     width:100%;
     /*margin:10px 0px;*/
@@ -297,6 +317,20 @@
     margin: 0 auto;
     text-align: center;
     padding-top: 17px;
+    color: #AF342B;
+}
+
+.pprop2{
+    /*border:solid 2px #AF342B;*/
+    /*background-color:#D53F34;*/
+    height:40px;
+    width:60px;
+    /*display:inline-block;*/
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 4px;
     color: #AF342B;
 }
 

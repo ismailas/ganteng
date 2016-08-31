@@ -1,10 +1,17 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope,$http,$state) {
+.controller('loginCtrl', function($scope,$http,$state,localStorageService) {
 
     $scope.email        = "";
     $scope.password     = "";
     $scope.login        = [];
+
+    function submitLS(key, val) {
+        return localStorageService.set(key, val);
+    }
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
     // $scope.users_id     = "";
     console.log('login');
 
@@ -23,17 +30,21 @@ angular.module('app.controllers', [])
                 console.log(response);
                 $scope.users_id = response.data.users_id;
                 console.log($scope.users_id);
+                // $state.go('menu', {'users_id' : $scope.users_id});
+                submitLS('users_id',$scope.users_id);
+                console.log(getItem('users_id'));
             }, function errorCallback(response) {
+
+                alert("something wrong!");
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
             });
         }
         $scope.postUser();
-        $state.go('menu', {'users_id' : $scope.users_id});
+
 
 
     }
-
 
 })
 
@@ -64,7 +75,8 @@ angular.module('app.controllers', [])
             "firstjumdon"   : jumdon,
             "lastdonate"    : lastdonate,
             "email"         : email,
-            "password"      : password
+            "password"      : password,
+            "typeuser"      : false
         };
         console.log($scope.signup);
         console.log('tes');
@@ -77,8 +89,10 @@ angular.module('app.controllers', [])
                 data: $scope.signup
             }).then(function successCallback(response) {
                 console.log(response);
+                console.log('SUCCESFULLY SIGNED UP');
                 // response.data = $scope.signup ;
             }, function errorCallback(response) {
+                console.log('SIGNING UP FAILED');
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
             });
@@ -90,7 +104,7 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('signup2Ctrl', function($scope,$state) {
+.controller('signup2Ctrl', function($scope,$state,$http,$stateParams) {
 
     $scope.firstname    = "";
     $scope.lastname     = "";
@@ -111,11 +125,30 @@ angular.module('app.controllers', [])
             "cabang"        : cabang,
             "token"         : token,
             "email"         : email,
-            "password"      : password
+            "password"      : password,
+            "typeuser"      : true
         };
         console.log($scope.signup);
         console.log('tes');
         $state.go('login');
+
+        $scope.postUser = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/users',
+                data: $scope.signup
+            }).then(function successCallback(response) {
+                console.log(response);
+                console.log('SUCCESFULLY SIGNED UP');
+                // response.data = $scope.signup ;
+            }, function errorCallback(response) {
+                console.log('SIGNING UP FAILED');
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        $scope.postUser();
 
     }
 
@@ -156,11 +189,17 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope) {
+.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope,localStorageService) {
     // username
     $scope.name = "Sumail Abdush";
     $scope.statuscheck  = true;
     $scope.tabcheck = 0 ;
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
 
     $scope.user = {
         "firstname" : "Chelsea",
@@ -177,7 +216,7 @@ angular.module('app.controllers', [])
     };
     console.log('menu');
     console.log($stateParams.users_id);
-    $scope.urlx = "http://localhost:3000/users/" + $stateParams.users_id.toString();
+    $scope.urlx = "http://localhost:3000/users/" + $scope.users_id.toString();
     console.log($scope.urlx);
     $scope.getuser = function() {
         $http({
@@ -192,23 +231,31 @@ angular.module('app.controllers', [])
             // or server returns response with an error status.
         });
     }
-
     $scope.getuser();
 
     $scope.changeState  = function(user_id) {
-        if ($stateParams.users_id == ''){
+        if ($scope.users_id == ''){
             $state.go('login');
         } else {
             $state.go('menu.event');
         }
 
     }
-
     $scope.changeState();
-    $scope.editprof = function (){
-        $state.go('profile', {'users_id' : $scope.user.users_id});
 
-    }
+    // $scope.inputBC = function(){
+    //     $state.go('inputBC', {'users_id' : $scope.user.users_id});
+    // };
+    // $scope.inputNF = function(){
+    //     $state.go('inputNF', {'users_id' : $scope.user.users_id});
+    // };
+    // $scope.inputEV = function(){
+    //     $state.go('inputEV', {'users_id' : $scope.user.users_id});
+    // };
+    //
+    // $scope.editprof = function (){
+    //     $state.go('profile', {'users_id' : $scope.user.users_id});
+    // }
 
     $scope.changeTab = function(newTab){
         $scope.tabcheck = newTab;
@@ -254,10 +301,12 @@ angular.module('app.controllers', [])
 
 
 })
+.controller('profileCtrl', function($scope,$state,$stateParams,$http,localStorageService) {
 
-
-
-.controller('profileCtrl', function($scope,$state,$stateParams,$http) {
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
 
     $scope.editPassword = false;
 
@@ -281,8 +330,8 @@ angular.module('app.controllers', [])
     };
 
     console.log('profile');
-    console.log($stateParams.users_id);
-    $scope.urlx = "http://localhost:3000/users/" + $stateParams.users_id.toString();
+    console.log($scope.users_id);
+    $scope.urlx = "http://localhost:3000/users/" + $scope.users_id.toString();
     console.log($scope.urlx);
     $scope.getuser = function() {
         $http({
@@ -301,19 +350,15 @@ angular.module('app.controllers', [])
     $scope.getuser();
 
     $scope.changeState  = function(user_id) {
-        if ($stateParams.users_id == ''){
+        if ($scope.users_id == ''){
             $state.go('login');
         }
-
     }
-
     $scope.changeState();
 
 })
 
-
-
-.controller('settingCtrl', function($scope) {
+.controller('settingCtrl', function($scope,localStorageService) {
 
 })
 
@@ -321,7 +366,13 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('BloodCallCtrl', function($scope,$http,$stateParams,$state) {
+.controller('BloodCallCtrl', function($scope,$http,$stateParams,$state,localStorageService) {
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
     console.log($stateParams.bloodcall_id);
     $scope.url_bc = "http://localhost:3000/bloodcall/" + $stateParams.bloodcall_id.toString() ;
     $scope.getbc = function() {
@@ -350,8 +401,13 @@ angular.module('app.controllers', [])
     $scope.changeState();
 
 })
+.controller('NewsFeedCtrl', function($scope,$http,$stateParams,$state,localStorageService) {
 
-.controller('NewsFeedCtrl', function($scope,$http,$stateParams,$state) {
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
     console.log($stateParams.newsfeed_id);
     $scope.url_nf = "http://localhost:3000/newsfeed/" + $stateParams.newsfeed_id.toString() ;
     console.log($scope.url_nf);
@@ -380,13 +436,218 @@ angular.module('app.controllers', [])
 
     $scope.changeState();
 })
+.controller('EventCtrl',function($scope,$http,$stateParams,$state,localStorageService){
 
-.controller('ForgotPassCtrl', function($scope) {
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
+    // $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
+    $scope.statuscheck = false;
+
+    console.log($stateParams.event_id);
+    $scope.url_ev = "http://localhost:3000/event/" + $stateParams.event_id.toString() ;
+    console.log($scope.url_ev);
+    $scope.getev = function() {
+        $http({
+            method: 'GET',
+            url: $scope.url_ev
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.events = response.data;
+            $scope.waktu = Date.create($scope.events.evdate).relative();
+            console.log($scope.events);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
+
+    $scope.getev();
+
+    $scope.changeState  = function(event_id) {
+        if ($stateParams.event_id == ''){
+            $state.go('menu');
+        }
+
+    }
+
+    $scope.changeState();
 
 })
 
-.controller('HistoriCtrl',function($scope){
+.controller('inputBCCtrl', function($scope,$state,$http,$stateParams,localStorageService) {
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
+    // $scope.firstname    = "";
+    // $scope.lastname     = "";
+    // $scope.cabang       = "";
+    // $scope.token        = "";
+    // $scope.email        = "";
+    // $scope.password     = "";
+
+    $scope.bloodcall       = [];
+
+    console.log('Input BloodCall');
+
+    $scope.submitBC   = function(bcgoldar,bcatasnama,bcdate,bcpriority,bcketerangan){
+
+        $scope.bloodcall   = {
+            "bcgoldar"      : bcgoldar,
+            "bcatasnama"    : bcatasnama,
+            "bcdate"        : bcdate,
+            "bcpriority"    : bcpriority,
+            "bcketerangan"  : bcketerangan,
+            "bcstatus"      : false,
+            "users_id"      : $scope.users_id
+        };
+        console.log($scope.bloodcall);
+        console.log('tes');
+        $state.go('menu');
+
+        $scope.postBC = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/bloodcall',
+                data: $scope.bloodcall
+            }).then(function successCallback(response) {
+                console.log(response);
+                console.log('SUCCESFULLY SIGNED UP');
+                // response.data = $scope.signup ;
+            }, function errorCallback(response) {
+                console.log('SIGNING UP FAILED');
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        $scope.postBC();
+
+    }
+
+})
+.controller('inputNFCtrl', function($scope,$state,$http,$stateParams,localStorageService) {
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
+    // $scope.firstname    = "";
+    // $scope.lastname     = "";
+    // $scope.cabang       = "";
+    // $scope.token        = "";
+    // $scope.email        = "";
+    // $scope.password     = "";
+
+    $scope.newsfeed       = [];
+
+    console.log('Input News');
+
+    $scope.submitNF   = function(nfjudul,nfimage,nfcontent){
+
+        $scope.newsfeed   = {
+            "nfjudul"     : nfjudul,
+            "nfimage"     : nfimage,
+            "nfcontent"   : nfcontent,
+            "users_id"    : $scope.users_id
+        };
+        console.log($scope.newsfeed);
+        console.log('tes');
+        $state.go('menu');
+
+        $scope.postNF = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/newsfeed',
+                data: $scope.newsfeed
+            }).then(function successCallback(response) {
+                console.log(response);
+                console.log('SUCCESFULLY INPUT');
+                // response.data = $scope.signup ;
+            }, function errorCallback(response) {
+                console.log('INPUT FAILED');
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        $scope.postNF();
+
+    }
+
+})
+.controller('inputEVCtrl', function($scope,$state,$http,$stateParams,localStorageService) {
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
+    // $scope.firstname    = "";
+    // $scope.lastname     = "";
+    // $scope.cabang       = "";
+    // $scope.token        = "";
+    // $scope.email        = "";
+    // $scope.password     = "";
+
+    $scope.bloodcall       = [];
+
+    console.log('Input Event');
+
+    $scope.submitEV   = function(evname,evorganizer,evaddress,evdate,evlat,evlong){
+
+        $scope.events       = {
+            "evname"        : evname,
+            "evorganizer"   : evorganizer,
+            "evaddress"     : evaddress,
+            "evdate"        : evdate,
+            "evlat"         : evlat,
+            "evlong"        : evlong,
+            "users_id"      : $scope.users_id
+        };
+        console.log($scope.events);
+        console.log('tes');
+        $state.go('menu');
+
+        $scope.postEV = function() {
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/event',
+                data: $scope.events
+            }).then(function successCallback(response) {
+                console.log(response);
+                console.log('SUCCESFULLY SIGNED UP');
+                // response.data = $scope.signup ;
+            }, function errorCallback(response) {
+                console.log('SIGNING UP FAILED');
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+
+        $scope.postEV();
+
+    }
+
+})
+
+.controller('ForgotPassCtrl', function($scope,$http) {
+
+})
+
+.controller('HistoriCtrl',function($scope,$state,$http,$stateParams,localStorageService){
     $scope.addHistori = false;
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
 
     $scope.user = {
         "firstname"     : "Chelsea",
@@ -458,50 +719,21 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('EventCtrl',function($scope,$http,$stateParams,$state){
-    // $scope.map = { center: { latitude: -6.89309, longitude: 107.6073811 }, zoom: 15 };
-    $scope.statuscheck = false;
-
-    console.log($stateParams.event_id);
-    $scope.url_ev = "http://localhost:3000/event/" + $stateParams.event_id.toString() ;
-    console.log($scope.url_ev);
-    $scope.getev = function() {
-        $http({
-            method: 'GET',
-            url: $scope.url_ev
-        }).then(function successCallback(response) {
-            console.log(response);
-            $scope.events = response.data;
-            $scope.waktu = Date.create($scope.events.evdate).relative();
-            console.log($scope.events);
-        }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
-    }
-
-    $scope.getev();
-
-    $scope.changeState  = function(event_id) {
-        if ($stateParams.event_id == ''){
-            $state.go('menu');
-        }
-
-    }
-
-    $scope.changeState();
-
-})
 
 .controller('AboutCtrl',function($scope){
 
 })
-
 .controller('FeedbackCtrl',function($scope){
 
 })
 
-.controller('eventlistCtrl',function($scope,$http,$state){
+.controller('eventlistCtrl',function($scope,$http,$state,localStorageService){
+
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
+
     // $scope.isClicked = "true";
     // $scope.itemClicked = function(){
     //     $scope.isClicked = "false";
@@ -536,8 +768,12 @@ angular.module('app.controllers', [])
     }
 
 })
+.controller('newsfeedlistCtrl',function($scope,$http,$state,localStorageService){
 
-.controller('newsfeedlistCtrl',function($scope,$http,$state){
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
 
     $scope.getnflist = function() {
         $http({
@@ -561,9 +797,12 @@ angular.module('app.controllers', [])
     }
 
 })
+.controller('bloodcalllistCtrl',function($scope, $http, $state,localStorageService){
 
-.controller('bloodcalllistCtrl',function($scope, $http, $state){
-
+    function getItem(key) {
+        return localStorageService.get(key);
+    }
+    $scope.users_id = getItem('users_id');
 
     $scope.getBClist = function() {
         $http({

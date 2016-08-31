@@ -17,7 +17,7 @@
                         <i class="icon ion-ios-camera-outline"></i>
                     </button>
                 <!-- histori -->
-                <div class="cgff" id="ephistori">
+                <div class="cgff" id="ephistori" ng-show="!user.typeuser">
                     <div id="ephproperties">
                         <span>Last Donation</span></br>
                         {{user.lastdonate | date : "d MMMM yyyy"}}
@@ -30,11 +30,11 @@
             <!-- First Name -->
             <form ng-submit="submit()">
                 <div class="eprow cgff">
-                    <div class="cgff eplabelpass ">
+                    <div class="cgff eplabelpass " >
                         First Name
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="firstname" ng-model="user.firstname">
+                        <input class="epinputpass cgff" type="text" name="firstname" ng-model="user.firstname" ng-class="user.typeuser? 'pmi' : 'pendonor'">
                     </div>
                 </div>
                 <!-- Last name -->
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <!-- Tanggal Lahir -->
-                <div class="eprow cgff">
+                <div class="eprow cgff" ng-show="!user.typeuser">
                     <div id="epbd" class="cgff eplabelpass">
                         Birth Date
                     </div>
@@ -56,12 +56,21 @@
                     </div>
                 </div>
                 <!-- Golongan Darah -->
-                <div class="eprow cgff">
+                <div class="eprow cgff" ng-show="!user.typeuser">
                     <div class="cgff eplabelpass">
                         Blood Type
                     </div>
                     <div class="epinput">
                         <input class="epinputpass cgff" type="text" name="golongandarah" ng-model="user.goldar">
+                    </div>
+                </div>
+                <!-- Cabang -->
+                <div class="eprow cgff" ng-show="user.typeuser">
+                    <div class="cgff eplabelpass">
+                        Cabang PMI
+                    </div>
+                    <div class="epinput">
+                        <input class="epinputpass cgff" type="text" name="golongandarah" ng-model="user.cabang">
                     </div>
                 </div>
                 <!-- Email -->

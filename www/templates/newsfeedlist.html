@@ -1,4 +1,4 @@
-<div ng-repeat="item in nflist | orderBy : nfdate" class="" ng-click="changeState(item.newsfeed_id)">
+<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in nflist | orderBy : nfdate" class="" ng-click="changeState(item.newsfeed_id)">
     <div class="nflistimg">
         <img src="/img/nfimage.jpg" class="nflistimage" alt="" />
     </div>

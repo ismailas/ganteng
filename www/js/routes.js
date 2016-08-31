@@ -122,6 +122,41 @@ angular.module('app.routes', [])
         }
     })
 
+    .state('Event', {
+        url: '/Eventpage',
+        templateUrl: 'templates/Event.html',
+        controller: 'EventCtrl',
+        params: {
+            event_id    : '',
+        }
+    })
+
+    .state('inputBC', {
+        url: '/inputBC',
+        templateUrl: 'templates/inputBC.html',
+        controller: 'inputBCCtrl',
+        params: {
+            users_id    : '',
+        }
+    })
+    .state('inputNF', {
+        url: '/inputNF',
+        templateUrl: 'templates/inputNF.html',
+        controller: 'inputNFCtrl',
+        params: {
+            users_id    : '',
+        }
+    })
+    .state('inputEV', {
+        url: '/inputEV',
+        templateUrl: 'templates/inputEV.html',
+        controller: 'inputEVCtrl',
+        params: {
+            users_id    : '',
+        }
+    })
+
+
     .state('ForgotPass', {
         url: '/ForgotPasspage',
         templateUrl: 'templates/ForgotPass.html',
@@ -135,14 +170,8 @@ angular.module('app.routes', [])
 
     })
 
-    .state('Event', {
-        url: '/Eventpage',
-        templateUrl: 'templates/Event.html',
-        controller: 'EventCtrl',
-        params: {
-            event_id    : '',
-        }
-    })
+
+
 
     .state('about', {
         url: '/aboutpage',

@@ -1,0 +1,46 @@
+<ion-view hide-nav-bar="true" title="BloodCall" id="BloodCallpage" class=" ">
+    <ion-content padding="true" class="">
+        <ion-header-bar align-title="center" class="bar-assertive">
+            <div class="buttons">
+                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+            </div>
+            <h1 class="title">Input BloodCall</h1>
+        </ion-header-bar>
+        <ion-content padding="true" class="has-header">
+            <div class="cgff bccontainer">
+                <form class="" ng-submit="submitBC">
+                    <span class="input-label" style="width:100%;">Golongan Darah</span>
+                    <ion-list id=su2list style="margin:0 auto" >
+                        <ion-radio style="display:inline-block;width:22%" ng-model="bcgoldar" ng-value="'A'">A</ion-radio>
+                        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="bcgoldar" ng-value="'B'">B</ion-radio>
+                        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="bcgoldar" ng-value="'AB'">AB</ion-radio>
+                        <ion-radio style="margin-left:3%; display:inline-block;width:22%" ng-model="bcgoldar" ng-value="'O'">O</ion-radio>
+                    </ion-list>
+                    <span class="input-label">Atas Nama</span>
+                    <label class="item item-input " >
+                        <input type="text" placeholder="" ng-model="bcatasnama">
+                    </label>
+                    <span class="input-label">Tanggal</span>
+                    <label class="item item-input " >
+                        <input type="date" placeholder="" ng-model="bcdate">
+                    </label>
+                    <span class="input-label">Prioritas</span>
+                    <ion-list id=su2list style="margin:0 auto" >
+                        <ion-radio style="display:inline-block;width:30.5%" ng-model="bcpriority" ng-value="1">Needed</ion-radio>
+                        <ion-radio style="margin-left:3%; display:inline-block;width:30.5%" ng-model="bcpriority" ng-value="2">Urgent</ion-radio>
+                        <ion-radio style="margin-left:3%; display:inline-block;width:30.5%" ng-model="bcpriority" ng-value="3">Danger</ion-radio>
+                    </ion-list>
+                    <span class="input-label">Keterangan</span>
+                    <label class="item " >
+                        <textarea style="width:100%; height:150px;" name="bcketerangan" placeholder="keterangan" ng-model="bcketerangan"></textarea>
+                        <!-- <input style="height:200px;" type="text" placeholder="" ng-model="bcketerangan"> -->
+                    </label>
+                    <div class="twinbutton">
+                        <button ui-sref="menu" id="su2back" class="round brbutton">back</button>
+                        <button id="su2next" class="sumarginbutton round brbutton" type="submit">sign-up</button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-content>
+</ion-view>

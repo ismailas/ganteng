@@ -1,4 +1,5 @@
-<div ng-repeat="item in BClist | orderBy : bcdate" class="cgff evitem" ng-click="changeState(item.bloodcall_id)">
+<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in BClist | orderBy : bcdate" class="cgff evitem" ng-click="changeState(item.bloodcall_id)">
+
     <div class="textellipsis evtitle">
         {{item.bcgoldar}} dibutuhkan segera!
     </div>
