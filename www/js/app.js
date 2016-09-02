@@ -5,7 +5,23 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives','ngMap','ionic-native-transitions','LocalStorageModule'])
+angular.module('app', [
+                        'ionic',
+                        'app.mainctrls',
+                        'app.inputctrls',
+                        'app.itemctrls',
+                        'app.editctrls',
+                        'app.listctrls',
+                        'app.donorctrls',
+                        'app.settingctrls',
+                        'app.signupctrls',
+                        'app.routes',
+                        'app.services',
+                        'app.directives',
+                        'ngMap',
+                        'ionic-native-transitions',
+                        'LocalStorageModule'
+                    ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,29 +37,32 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+// .config(function($ionicNativeTransitionsProvider){
+//     // $ionicNativeTransitionsProvider.enable(false);
+//     $ionicNativeTransitionsProvider.setDefaultOptions({
+//         type: 'slide',
+//         direction: 'left',
+//         duration: 400, // in milliseconds (ms), default 400,
+//         slowdownfactor: 4, // overlap views (higher number is more) or no overlap (1), default 4
+//         iosdelay: -1, // ms to wait for the iOS webview to update before animation kicks in, default -1
+//         androiddelay: -1, // same as above but for Android, default -1
+//         winphonedelay: -1, // same as above but for Windows Phone, default -1,
+//         fixedPixelsTop: 0, // the number of pixels of your fixed header, default 0 (iOS and Android)
+//         fixedPixelsBottom: 0, // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+//         triggerTransitionEvent: '$ionicView.afterEnter', // internal ionic-native-transitions option
+//         backInOppositeDirection: false // Takes over default back transition and state back transition to use the opposite direction transition to go back
+//     });
+// })
 
-// .config(function($ionicConfigProvider) {
-//   $ionicConfigProvider.views.transition('none');
-// });
-
-
-.config(function($ionicNativeTransitionsProvider){
-    $ionicNativeTransitionsProvider.setDefaultOptions({
-        duration: 400, // in milliseconds (ms), default 400,
-        slowdownfactor: 4, // overlap views (higher number is more) or no overlap (1), default 4
-        iosdelay: -1, // ms to wait for the iOS webview to update before animation kicks in, default -1
-        androiddelay: -1, // same as above but for Android, default -1
-        winphonedelay: -1, // same as above but for Windows Phone, default -1,
-        fixedPixelsTop: 0, // the number of pixels of your fixed header, default 0 (iOS and Android)
-        fixedPixelsBottom: 0, // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
-        triggerTransitionEvent: '$ionicView.afterEnter', // internal ionic-native-transitions option
-        backInOppositeDirection: false // Takes over default back transition and state back transition to use the opposite direction transition to go back
-    });
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.views.transition('none');
 })
+
+
 
 .config(function (localStorageServiceProvider) {
   localStorageServiceProvider
     .setPrefix('app')
     .setStorageType('sessionStorage')
     .setNotify(true, true)
-});
+})

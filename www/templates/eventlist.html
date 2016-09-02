@@ -1,15 +1,19 @@
-<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in evlist | orderBy : evdate " class="cgff evitem"  ng-click="changeState(item.event_id)">
-    <div class="textellipsis evtitle">
-        {{item.evname}}
+<ion-content overflow-scroll="true">
+    <div ng-repeat="item in evlist | orderBy : 'evdate'  "   ng-click="changeState(item.event_id)">
+        <div class="cgff evitem" ng-class="users_id == item.users_id ? 'pemilik' : ''" ng-show="item.waktu3">
+            <div class="textellipsis evtitle">
+                {{item.evname}}
+            </div>
+            <div  class="textellipsis evaddress">
+                {{item.evaddress}}
+            </div>
+            <div class="evdate">
+                {{item.evdate | date : "d MMMM yyyy"}}
+                <span class="evstatus" ng-class="item.waktu2? 'redbutton':'grey'"> {{item.waktu}} </span>
+            </div>
+        </div>
     </div>
-    <div  class="textellipsis evaddress">
-        {{item.evaddress}}
-    </div>
-    <div class="evdate">
-        {{item.evdate | date : "d MMMM yyyy"}}
-        <span class="evstatus"> {{item.waktu}} </span>
-    </div>
-</div>
+</ion-content>
 <div class="">
 
 </div>

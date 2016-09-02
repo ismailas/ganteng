@@ -17,6 +17,28 @@
 
 }
 
+.bcgoldar2{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    float: right;
+    position: relative;
+    right: 20px;
+    bottom: 70px;
+    border:none;
+    color: white;
+}
+
+.needed{
+    background-color: #D53F34;
+}
+.urgent{
+    background-color: #75231D;
+}
+.danger{
+    background-color: black;
+}
+
 .statusinactive{
     background-color: lightgrey;
     color: black;
@@ -146,9 +168,24 @@
     font-weight:  bold;
     font-family: 'Poppins', sans-serif;
     padding-top: 3px;
+
 }
 .smallbrbutton:active{
     background-color: brown;
+}
+.smallbrbutton2{
+    border-radius: 5px;
+    background-color: #265A75;
+    border: none;
+    height: 30px;
+    color:white;
+    font-size: 16px;
+    font-weight:  bold;
+    font-family: 'Poppins', sans-serif;
+    padding: 1px 10px 0;
+}
+.smallbrbutton2:active{
+    background-color: #29627F;
 }
 
 #mapz {
@@ -238,7 +275,9 @@
     background-color: #1C1C1C;
 }
 .pemilik{
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    border-left: solid 4px #D53F34;
+    border-right: solid 4px #D53F34;
 }
 /*about*/
 
@@ -471,6 +510,13 @@
 
 /*event*/
 
+.marker{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border: solid 4px red;
+}
+
 .evitemclicked{
     background-color: blue;
 }
@@ -487,6 +533,12 @@
 
 .evitem:active{
     background-color: #f1f1f1;
+}
+
+.popup{
+    background-color: lightblue;
+    opacity: 1;
+    color: yellow;
 }
 
 .textellipsis{
@@ -507,8 +559,16 @@
 
 }
 
-#evmap{
+.evmap{
     height:calc(100vh - 180px);
+}
+.evmap2{
+    height:300px;
+}
+
+.ketinput{
+    font-size: 13px;
+    color: darkgrey;
 }
 
 #evbar{
@@ -552,13 +612,16 @@
     /*width: 100px;*/
     padding: 0px 10px 0px 10px;
     font-size: 12px;
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
     border-radius: 10px;
     /*padding: 0;*/
     text-align: center;
     font-weight: bold;
 }
 
+.grey{
+    background-color: lightgrey;
+}
 
 
 .evdonate{
@@ -1012,7 +1075,7 @@
 }
 .bakgr2 {
     /*background-color: #f5f5f5;*/
-    background: url("../img/brbg4.png");
+    background: url("../img/brbg5.png");
     background-size: 100px 100px;
     background-repeat: repeat;
 }

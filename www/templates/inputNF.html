@@ -1,4 +1,4 @@
-<ion-view hide-nav-bar="true" title="BloodCall" id="BloodCallpage" class=" ">
+<ion-view hide-nav-bar="true" title="Input News" id="BloodCallpage" class=" ">
     <ion-content padding="true" class="">
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
@@ -8,7 +8,7 @@
         </ion-header-bar>
         <ion-content padding="true" class="has-header">
             <div class="cgff bccontainer">
-                <form class="" ng-submit="submitNF">
+                <form class="" ng-submit="submitNF(nfjudul,nfimage,nfcontent)">
                     <span class="input-label">Judul</span>
                     <label class="item item-input " >
                         <input type="text" placeholder="" ng-model="nfjudul">
@@ -24,7 +24,7 @@
                     </label>
                     <div class="twinbutton">
                         <button ui-sref="menu" id="su2back" class="round brbutton">back</button>
-                        <button id="su2next" class="sumarginbutton round brbutton" type="submit">sign-up</button>
+                        <button id="su2next" class="sumarginbutton round brbutton" type="submit">Save</button>
                     </div>
                 </form>
             </div>

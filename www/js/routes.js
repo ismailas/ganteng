@@ -16,6 +16,12 @@ angular.module('app.routes', [])
         controller: 'loginCtrl'
     })
 
+    .state('selfcheck', {
+        url: '/selfcheck',
+        templateUrl: 'templates/selfcheck.html',
+        controller: 'selfcheckCtrl'
+    })
+
 
 
     .state('menu', {
@@ -83,25 +89,11 @@ angular.module('app.routes', [])
         }
     })
 
-    .state('signup3', {
-        url: '/signup3page',
-        templateUrl: 'templates/signup3.html',
-        controller: 'signup3Ctrl',
-        params: {
-            signup2    : '',
-        }
-    })
 
     .state('setting', {
         url: '/settingpage',
         templateUrl: 'templates/setting.html',
         controller: 'settingCtrl'
-    })
-
-    .state('kegiatan', {
-        url: '/kegiatanpage',
-        templateUrl: 'templates/kegiatan.html',
-        controller: 'kegiatanCtrl'
     })
 
     .state('BloodCall', {

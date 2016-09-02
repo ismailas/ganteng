@@ -1,20 +1,20 @@
 <ion-view hide-nav-bar="true" title="Menu" id="menupage" class=" ">
     <ion-content padding="true" class="cgff bakgr2">
         <div >
-            <div id="brlogomenu" ng-click="statuscheck = !statuscheck">
-                <img src="img/brlogo2.png" height="25px" style="display: inline;">
+            <div id="brlogomenu" ng-click="showPopup()">
+                <img src="img/brmini.png" height="30px" style="display: inline;">
             </div>
             <div id="btnlogoutsetting">
-                <button ui-sref="selfcheck" id="selfcheck"  class="smallbrbutton"><i class="icon ion-heart"></i></button>
+                <button ng-show="!user.typeuser" ui-sref="selfcheck" class="smallbrbutton2">Self-Check</button>
                 <button ui-sref="setting"  class="smallbrbutton"><i class="icon ion-gear-b"></i></button>
-                <button ui-sref="login"  class="smallbrbutton"><i class="icon ion-power"></i></button>
+                <button name="logout" ng-click="logout()" class="smallbrbutton"><i class="icon ion-power"></i></button>
             </div>
         </div>
         <div id="brprofil">
         <div id="brprof" class="cgff " >
                 <!-- foto profil -->
                 <div id="pprofil" ui-sref="profile" class="round">
-                    <img id="imgprofil"  src={{user.foto}}>
+                    <img id="imgprofil"  src={{foto}}>
                 </div>
             <!-- </div> -->
             <div id="profilproperties" class="">
@@ -29,7 +29,7 @@
                                 <!-- {{ status }} -->
                             </div>
                         </div>
-                        <p class="ketproperties">{{ statuscheck ? 'Ready' : '30 days left' }}</p>
+                        <p class="ketproperties">{{ statuscheck ? 'Ready' : remaining }}{{ !statuscheck ? ' days left' : '' }}</p>
                     </div>
                     <!-- jumlah donasi -->
                     <div class="pproperties">
@@ -51,7 +51,7 @@
                     <div class="pproperties">
                         <div id="statusdonor">
                             <div class="cgff pprop2 round"  >
-                                <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputEV()"></button>
+                                <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ui-sref="inputEV"></button>
                             </div>
                         </div>
                         <p class="ketproperties">Event</p>
@@ -59,14 +59,14 @@
                     <!-- jumlah donasi -->
                     <div class="pproperties">
                         <div class="cgff pprop2 round" >
-                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputBC()"></button>
+                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ui-sref="inputBC"></button>
                         </div>
                         <p class="ketproperties">Bloodcall</p>
                     </div>
                     <!-- golongan darah -->
                     <div class="pproperties">
                         <div  class="cgff pprop2 round">
-                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ng-click="inputNF()"></button>
+                            <button class="round addbutton redbutton icon ion-plus-round" type="button" name="button" ui-sref="inputNF"></button>
                         </div>
                         <p class="ketproperties">News</p>
                     </div>

@@ -1,17 +1,20 @@
-<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in nflist | orderBy : nfdate" class="" ng-click="changeState(item.newsfeed_id)">
-    <div class="nflistimg">
-        <img src="/img/nfimage.jpg" class="nflistimage" alt="" />
-    </div>
-    <div class="nfitem evitem" >
-        <div class="newellipsis nftitlelist">
-            {{item.nfjudul}}
+<ion-content overflow-scroll="true">
+    <div ng-repeat="item in nflist | orderBy : 'nfdate' : 'reverse'" ng-click="changeState(item.newsfeed_id)">
+        <div ng-class="users_id == item.users_id ? 'pemilik' : ''">
+            <div class="nflistimg">
+                <img src="/img/nfimage.jpg" class="nflistimage" alt="" />
+            </div>
+            <div class="nfitem evitem" >
+                <div class="newellipsis nftitlelist">
+                    {{item.nfjudul}}
+                </div>
+                <span class="cgff nfdate">
+                    {{item.nfdate | date : "EEEE, d MMMM yyyy"}}
+                </span>
+            </div>
         </div>
-        <span class="cgff nfdate">
-            {{item.nfdate | date : "EEEE, d MMMM yyyy"}}
-        </span>
     </div>
-
-</div>
+</ion-content>
 <div class="">
 
 </div>

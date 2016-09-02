@@ -6,79 +6,50 @@
                 <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
             </div>
             <h1 class="title">Event</h1>
+            <div class="buttons" ng-show="pemilik2">
+                <button  class="button button-icon icon ion-edit" ></button>
+            </div>
         </ion-header-bar>
         <ion-content class=" has-header">
-            <!-- Some content! -->
-            <div map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true">
-                <!-- <ng-map id="map" center="-6.89309,107.6073811" zoom="15">
-                <directions
-                draggable="true"
-                panel="directions-panel"
-                travel-mode="DRIVING"
-                origin="-6.8914747,107.6084704"
-                destination="-6.9297115,107.6034086">
-            </directions>
-            <marker position="-6.9297115,107.6034086" title="Hello World!"></marker>
-
-        </ng-map> -->
-                    <ng-map zoom="15"
-                        center="-6.89309,107.6073811"
-                        id="evmap" >
+                <ng-map class="evmap" center="{{evlat}},{{evlng}}" zoom="15">
                     <directions
-                        draggable="true"
-                        panel="directions-panel"
-                        travel-mode="DRIVING"
-                        origin="current-location"
-                        destination="-6.9297115,107.6034086">
-                    </directions>
+                    draggable="true"
+                    panel="directions-panel"
+                    travel-mode="DRIVING"
+                    suppress-markers="true"
+                    origin="{{userlat}},{{userlng}}"
+                    destination="{{evlat}},{{evlng}}">
+                </directions>
+                <marker position="{{evlat}},{{evlng}}" animation="Animation.BOUNCE" title="Hello World!"></marker>
+                <marker position="current" draggable="false" title="Hello World! "></marker>
 
-                    </ng-map>
-            </div>
-            <div id="evbar" class="cgff">
-                <div id="evproperties" class="">
-                    <button ng-show="statuscheck" ng-click="statuscheck = !statuscheck" class="cgf round redbutton evdonate">
-                        Donate
-                    </button>
-                    <button ng-show="!statuscheck" ng-click="statuscheck = !statuscheck" class="cgff round statusinactive evdonate2">
-                        Donate</br><i>23 days left</i>
-                    </button>
+            </ng-map>
+        <div id="evbar" class="cgff" >
+            <div id="evproperties" class="">
+                <button ng-show="statuscheck" ng-click="statuscheck = !statuscheck" class="cgf round redbutton evdonate">
+                    Donate
+                </button>
+                <button ng-show="!statuscheck" ng-click="statuscheck = !statuscheck" class="cgff round statusinactive evdonate2">
+                    Donate</br><i>23 days left</i>
+                </button>
 
-                    <!-- <div id="evtitle" class="evellipsis">
-                        Donor Bersama Bapak Mahdan denga tema "Semua adalah Pengetahuan Umum"
-                    </div> -->
-
-                    <div class="evtitle" class="newellipsis">
-                        {{events.evname}}
-                    </div>
-                    <div class="evorganizer">
-                        {{events.evorganizer}}
-                    </div>
-                    <div class="evaddress">
-                        {{events.evaddress}}
-                    </div>
-                    <div class="evdate">
-                        {{events.evdate | date : "d MMMM yyyy"}}
-                        <span class="evstatus"> {{waktu}} </span>
-                    </div>
-                    <!-- <div id="evket">
-                        Belakang LIPI
-                    </div> -->
-
+                <div class="evtitle" class="newellipsis" >
+                    {{events.evname}}
                 </div>
+                <div class="evorganizer">
+                    {{events.evorganizer}}
+                </div>
+                <div class="evaddress">
+                    {{events.evaddress}}
+                </div>
+                <div class="evdate">
+                    {{events.evdate | date : "d MMMM yyyy"}}
+                    <span class="evstatus"> {{waktu}} </span>
+                </div>
+
             </div>
+        </div>
 
-</ion-content>
-<!-- <ion-footer-bar align-title="left" class="bar-stable">
-
-  <h1 class="title">Kegiatan Donor Darah Bersama SBY</h1>
-
-  <div class="buttons" ng-click="doSomething()">
-    <button class="button button-assertive">Donate</button>
-  </div>
-</ion-footer-bar> -->
-<!-- <div id="map" data-tap-disabled="true"></div> -->
-<!-- <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-
-</ui-gmap-google-map> -->
+    </ion-content>
 </ion-content>
 </ion-view>

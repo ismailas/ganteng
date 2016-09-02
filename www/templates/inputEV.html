@@ -1,4 +1,4 @@
-<ion-view hide-nav-bar="true" title="BloodCall" id="BloodCallpage" class=" ">
+<ion-view hide-nav-bar="true" title="Input Event" id="BloodCallpage" class=" ">
     <ion-content padding="true" class="">
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
@@ -8,7 +8,7 @@
         </ion-header-bar>
         <ion-content padding="true" class="has-header">
             <div class="cgff bccontainer">
-                <form class="" ng-submit="submitNF">
+                <form class="" ng-submit="submitEV(evname,evorganizer,evaddress,evdate)">
                     <span class="input-label" style="width:100%;">Nama Kegiatan</span>
                     <label class="item item-input " >
                         <input type="text" placeholder="" ng-model="evname">
@@ -21,20 +21,19 @@
                     <label class="item item-input " >
                         <input type="text" placeholder="" ng-model="evaddress">
                     </label>
-                    <span class="input-label">Tanggal</span>
+                    <span class="input-label">Waktu</span>
                     <label class="item item-input " >
-                        <input type="date" placeholder="" ng-model="evdate">
+                        <input type="datetime-local" placeholder="" ng-model="evdate">
                     </label>
                     <span class="input-label">Lokasi</span>
-                    <label class="item item-input " >
-                        <input type="number" placeholder="latitude" ng-model="evlat">
-                    </label>
-                    <label class="item item-input " >
-                        <input type="number" placeholder="longitude" ng-model="evlong">
-                    </label>
+                    <span class="ketinput">Drag marker to event's place</span>
+                    <ng-map class="evmap2" center="current" zoom="15">
+                    <marker position="current" draggable="true" title="Event Location "></marker>
+
+                    </ng-map>
                     <div class="twinbutton">
                         <button ui-sref="menu" id="su2back" class="round brbutton">back</button>
-                        <button id="su2next" class="sumarginbutton round brbutton" type="submit">sign-up</button>
+                        <button id="su2next" class="sumarginbutton round brbutton" type="submit" ng-click="getpos()">Save</button>
                     </div>
                 </form>
             </div>

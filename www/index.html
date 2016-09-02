@@ -5,18 +5,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-
-
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic/js/angular/angular.min.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
 
     <link href="css/style.css" rel="stylesheet">
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -43,32 +33,27 @@
       }
     </style>
 
-    <!-- <script src="js/moment.js"></script> -->
-    <!-- <script src="js/angular-moment.js"></script> -->
-    <script src="js/sugar-date.min.js"></script>
-    <script src="js/lodash.min.js"></script>
-    <script src="js/angular-local-storage.min.js"></script>
+    <script src="jsx/sugar-date.min.js"></script>
+    <script src="jsx/lodash.min.js"></script>
+    <script src="jsx/ionic-native-transitions.min.js"></script>
+    <script src="jsx/angular-local-storage.min.js"></script>
+    <script src="jsx/ng-map.min.js"></script>
 
 
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="js/mainctrls.js"></script>
+    <script src="js/editctrls.js"></script>
+    <script src="js/listctrls.js"></script>
+    <script src="js/inputctrls.js"></script>
+    <script src="js/donorctrls.js"></script>
+    <script src="js/itemctrls.js"></script>
+    <script src="js/signupctrls.js"></script>
+    <script src="js/settingctrls.js"></script>
     <script src="js/routes.js"></script>
     <script src="js/services.js"></script>
     <script src="js/directives.js"></script>
 
-    <script src="js/ionic-native-transitions.min.js"></script>
 
-    <!-- maps -->
-    <!-- <script src="/node_modules/angular-google-maps/node_modules/lodash/lodash.min.js"></script> -->
-    <!-- <script src='/path/to/angular[.min].js'></script> -->
-    <!-- <script src="/node_modules/angular-google-maps/node_modules/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-    <script src="/node_modules/angular-google-maps/dist/angular-google-maps.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true"></script> -->
-
-    <!-- <script src="js/ionic-native-transitions.min"></script> -->
-    <script src="js/ng-map.min.js"></script>
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="cordova.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1xzYmh95RvZhoAVSEMRkGC92GMPndCNU&amp;sensor=true"></script>
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
@@ -79,9 +64,6 @@
   <!-- <body ng-app="app" animation="slide-left-right-ios7"> -->
   <div>
     <div>
-        <!-- <ion-nav-bar class="bar-jancuks">
-            <ion-nav-back-button class="button-icon icon ion-arrow-left-b cgff"></ion-nav-back-button>
-        </ion-nav-bar> -->
         <ion-nav-view></ion-nav-view>
     </div>
   </div>

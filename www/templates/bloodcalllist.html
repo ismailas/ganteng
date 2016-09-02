@@ -1,14 +1,20 @@
-<div ng-class="users_id == item.users_id? 'pemilik'" ng-repeat="item in BClist | orderBy : bcdate" class="cgff evitem" ng-click="changeState(item.bloodcall_id)">
-
-    <div class="textellipsis evtitle">
-        {{item.bcgoldar}} dibutuhkan segera!
-    </div>
-    <div class="evaddress">
-        Atas Nama {{item.bcatasnama}}
-    </div>
-    <span class="evdate">
-        {{item.bcdate | date : "d MMMM yyyy"}}
-    </span>
-</div>
+    <ion-content overflow-scroll="true">
+        <div  ng-repeat="item in BClist | orderBy : 'bcpriority' : 'reverse'  " ng-click="changeState(item.bloodcall_id)">
+            <div class="cgff evitem"  ng-class="users_id == item.users_id ? 'pemilik' : '' ">
+                <div class="textellipsis evtitle">
+                    {{item.bcgoldar}} dibutuhkan segera!
+                </div>
+                <div class="evaddress">
+                    Atas Nama {{item.bcatasnama}}
+                </div>
+                <span class="evdate">
+                    {{item.bcdate | date : "d MMMM yyyy"}}
+                </span>
+            </div>
+            <button class="cgff round bcgoldar2" ng-class="checkprior(item.bcpriority)">
+                {{item.bcgoldar}}
+            </button>
+        </div>
+    </ion-content>
 
 <div></div>

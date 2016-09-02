@@ -10,7 +10,7 @@
             <div id="eptop">
                     <!-- foto profil -->
                     <div id="epimgbg" class="round">
-                        <img id="epimg" src="{{user.foto}}">
+                        <img id="epimg" src="{{foto}}">
                     </div>
                     <!-- change -->
                     <button id="epchangeimg" class="round redbutton cgf ">
@@ -28,13 +28,13 @@
                 </div>
             </div>
             <!-- First Name -->
-            <form ng-submit="submit()">
+            <form ng-submit="submitUser()">
                 <div class="eprow cgff">
                     <div class="cgff eplabelpass " >
                         First Name
                     </div>
                     <div class="epinput">
-                        <input class="epinputpass cgff" type="text" name="firstname" ng-model="user.firstname" ng-class="user.typeuser? 'pmi' : 'pendonor'">
+                        <input class="epinputpass cgff" type="text" name="firstname" ng-model="user.firstname">
                     </div>
                 </div>
                 <!-- Last name -->
@@ -83,37 +83,37 @@
                     </div>
                 </div>
 
+                <div class="eprow cgff">
+                    <div id="epepass" ng-click="editPassword = !editPassword">
+                        Edit password
+                    </div>
+                </div>
+
+                <div ng-show="editPassword" class="transisi">
+                    <div class="eprow cgff" >
+                        <div class="cgff eplabelpass">
+                            Old
+                        </div>
+                        <div class="epinput ">
+                            <input class="epinputpass cgff" type="password" name="Password" placeholder="Your old password" value="" ng-model="user.password">
+                        </div>
+                    </div>
+                    <div class="eprow cgff" >
+                        <div class="cgff eplabelpass">
+                            New
+                        </div>
+                        <div class="epinput ">
+                            <input class="epinputpass" type="password" name="Password" placeholder="Your new password" value="">
+                        </div>
+                    </div>
+
+                </div>
+                <div style="width:100%">
+                    <button type="submit" id="epsave"  class="round brbutton">
+                        Save
+                    </button>
+                </div>
             </form>
-            <div class="eprow cgff">
-                <div id="epepass" ng-click="editPassword = !editPassword">
-                    Edit password
-                </div>
-            </div>
-
-            <div ng-show="editPassword" class="transisi">
-                <div class="eprow cgff" >
-                    <div class="cgff eplabelpass">
-                        Old
-                    </div>
-                    <div class="epinput ">
-                        <input class="epinputpass cgff" type="password" name="Password" placeholder="Your old password" value="">
-                    </div>
-                </div>
-                <div class="eprow cgff" >
-                    <div class="cgff eplabelpass">
-                        New
-                    </div>
-                    <div class="epinput ">
-                        <input class="epinputpass" type="password" name="Password" placeholder="Your new password" value="">
-                    </div>
-                </div>
-
-            </div>
-            <div style="width:100%">
-                <button type="submit" id="epsave"  class="round brbutton">
-                    Save
-                </button>
-            </div>
         </ion-content>
 
     </ion-content>
