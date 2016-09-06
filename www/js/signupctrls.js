@@ -45,7 +45,7 @@ angular.module('app.signupctrls', [])
         $scope.postUser = function() {
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/users',
+                url: 'http://128.199.188.36:3000/users',
                 data: $scope.signup
             }).then(function successCallback(response) {
                 console.log(response);
@@ -113,7 +113,7 @@ angular.module('app.signupctrls', [])
         $scope.postUser = function() {
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/users',
+                url: 'http://128.199.188.36:3000/users',
                 data: $scope.signup
             }).then(function successCallback(response) {
                 console.log(response);

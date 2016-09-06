@@ -147,6 +147,30 @@ angular.module('app.routes', [])
             users_id    : '',
         }
     })
+    .state('editBC', {
+        url: '/editBC',
+        templateUrl: 'templates/editBC.html',
+        controller: 'editBCCtrl',
+        params: {
+            bloodcall_id    : '',
+        }
+    })
+    .state('editNF', {
+        url: '/editNF',
+        templateUrl: 'templates/editNF.html',
+        controller: 'editNFCtrl',
+        params: {
+            newsfeed_id    : '',
+        }
+    })
+    .state('editEV', {
+        url: '/editEV',
+        templateUrl: 'templates/editEV.html',
+        controller: 'editEVCtrl',
+        params: {
+            event_id    : '',
+        }
+    })
 
 
     .state('ForgotPass', {

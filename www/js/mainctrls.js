@@ -22,7 +22,7 @@ angular.module('app.mainctrls', [])
         };
         console.log(data);
 
-        $http.post('http://localhost:3000/users/login', data).success(function(response) {
+        $http.post('http://128.199.188.36:3000/users/login', data).success(function(response) {
             if (response !== '') {
                 console.log(localStorageService.get('users_id'));
                 localStorageService.set('users_id', response.users_id);
@@ -35,9 +35,11 @@ angular.module('app.mainctrls', [])
     }
 
 })
-.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope,localStorageService,$ionicPopup) {
+.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope,localStorageService,$ionicPopup,$window) {
     // username
     $scope.tabcheck = 0 ;
+
+
 
     $scope.users_id = localStorageService.get('users_id');
     console.log('logged in');
@@ -46,7 +48,7 @@ angular.module('app.mainctrls', [])
 
     $scope.getuser = function() {
         // $scope.urlcall();
-        var url_user    = "http://localhost:3000/users/" + localStorageService.get('users_id');
+        var url_user    = "http://128.199.188.36:3000/users/" + localStorageService.get('users_id');
 
         $http({
             method: 'GET',
@@ -149,6 +151,7 @@ angular.module('app.mainctrls', [])
                onTap: function(e) {
                    localStorageService.remove('users_id');
                    $state.go('login');
+                   $window.location.reload();
                }
              },
            ]
@@ -161,7 +164,7 @@ angular.module('app.mainctrls', [])
 
 
 })
-.controller('profileCtrl', function($scope,$state,$stateParams,$http,localStorageService,$ionicPopup) {
+.controller('profileCtrl', function($scope,$state,$stateParams,$http,localStorageService,$ionicPopup,$window) {
 
     $scope.users_id = localStorageService.get('users_id');
 
@@ -172,7 +175,7 @@ angular.module('app.mainctrls', [])
 
     console.log('profile');
     console.log($scope.users_id);
-    $scope.urlx = "http://localhost:3000/users/" + $scope.users_id.toString();
+    $scope.urlx = "http://128.199.188.36:3000/users/" + $scope.users_id.toString();
     console.log($scope.urlx);
     $scope.getuser = function() {
         $http({
@@ -215,7 +218,7 @@ angular.module('app.mainctrls', [])
         $scope.putUser = function() {
             $http({
                 method: 'PUT',
-                url: 'http://localhost:3000/users/'+$scope.users_id,
+                url: 'http://128.199.188.36:3000/users/'+$scope.users_id,
                 data: $scope.newprofile
             }).then(function successCallback(response) {
                 console.log(response);
@@ -251,6 +254,9 @@ angular.module('app.mainctrls', [])
          buttons: [
            { text: 'OK',
             type: 'button-assertive',
+            onTap: function(e) {
+                $window.location.reload();
+            }
             },
          ]
        });

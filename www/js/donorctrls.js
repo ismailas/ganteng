@@ -1,6 +1,73 @@
 angular.module('app.donorctrls', [])
-.controller('selfcheckCtrl', function($scope,$http,localStorageService,$ionicPopup) {
+.controller('selfcheckCtrl', function($scope,$http,localStorageService,$ionicPopup,localStorageService) {
+    $scope.users_id = localStorageService.get('users_id');
 
+    // $scope.daycount = "";
+
+    $scope.getuser = function() {
+        // $scope.urlcall();
+        var url_user    = "http://128.199.188.36:3000/users/" + localStorageService.get('users_id');
+
+        $http({
+            method: 'GET',
+            url: url_user
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.oldday = response.data.daycount;
+        }, function errorCallback(response) {
+        });
+    }
+    $scope.getuser();
+
+
+    $scope.showPopup = function(day) {
+        // $scope.dayz = day;
+
+       // An elaborate, custom popup
+       var myPopup = $ionicPopup.show({
+        //  template: '<b> {{daycount}} </b>',
+         title: 'ADD DAY TO COUNTDOWN',
+        //  subTitle:'Hari tambahan',
+        //  cssClass: '.popup',
+         scope: $scope,
+         buttons: [
+           { text: 'CANCEL',
+            type: 'button-light',
+            },
+           {
+             text: '<b>ADD</b>',
+             type: 'button-assertive',
+             onTap: function(e) {
+                 $scope.newday = $scope.oldday + day;
+                 $scope.putDay();
+             }
+           },
+         ]
+       });
+       myPopup.then(function(res) {
+         console.log('Tapped!', res);
+       });
+      };
+
+    // $scope.newday.daycount = "";
+
+    $scope.putDay = function() {
+        $http({
+            method: 'PUT',
+            url: 'http://128.199.188.36:3000/users/addday/'+$scope.users_id,
+            data: $scope.newday
+        }).then(function successCallback(response) {
+            console.log(response);
+            console.log('SUCCESFULLY EDITED');
+            $scope.showPopup();
+
+            // response.data = $scope.signup ;
+        }, function errorCallback(response) {
+            console.log('EDITING FAILED');
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+    }
 })
 .controller('HistoriCtrl',function($scope,$state,$http,$stateParams,localStorageService){
     $scope.addHistori = false;

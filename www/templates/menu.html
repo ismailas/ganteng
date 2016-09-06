@@ -1,10 +1,11 @@
 <ion-view hide-nav-bar="true" title="Menu" id="menupage" class=" ">
     <ion-content padding="true" class="cgff bakgr2">
         <div >
-            <div id="brlogomenu" ng-click="showPopup()">
+            <div id="brlogomenu" >
                 <img src="img/brmini.png" height="30px" style="display: inline;">
             </div>
             <div id="btnlogoutsetting">
+                <button ng-show="!user.typeuser" ng-click="showPopup()" class="smallbrbutton2">Tes Notif</button>
                 <button ng-show="!user.typeuser" ui-sref="selfcheck" class="smallbrbutton2">Self-Check</button>
                 <button ui-sref="setting"  class="smallbrbutton"><i class="icon ion-gear-b"></i></button>
                 <button name="logout" ng-click="logout()" class="smallbrbutton"><i class="icon ion-power"></i></button>

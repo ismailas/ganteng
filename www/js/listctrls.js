@@ -18,7 +18,7 @@ angular.module('app.listctrls', [])
     $scope.getEVlist = function() {
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/event'
+            url: 'http://128.199.188.36:3000/event'
         }).then(function successCallback(response) {
             console.log(response);
             console.log('callback berhasil');
@@ -56,7 +56,7 @@ angular.module('app.listctrls', [])
     $scope.getnflist = function() {
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/newsfeed'
+            url: 'http://128.199.188.36:3000/newsfeed'
         }).then(function successCallback(response) {
             console.log(response);
             console.log('callback berhasil');
@@ -93,7 +93,7 @@ angular.module('app.listctrls', [])
     $scope.getBClist = function() {
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/bloodcall'
+            url: 'http://128.199.188.36:3000/bloodcall'
         }).then(function successCallback(response) {
             console.log(response);
             console.log('callback berhasil');

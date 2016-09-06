@@ -7,7 +7,7 @@ angular.module('app.inputctrls', [])
 
     console.log('Input BloodCall');
 
-    $scope.submitBC   = function(bcgoldar,bcatasnama,bcdate,bcpriority,bcketerangan){
+    $scope.submitBC   = function(bcgoldar,bcatasnama,bcdate,bcpriority,bcketerangan,$window){
 
         $scope.bloodcall   = {
             "bcgoldar"      : bcgoldar,
@@ -24,7 +24,7 @@ angular.module('app.inputctrls', [])
         $scope.postBC = function() {
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/bloodcall',
+                url: 'http://128.199.188.36:3000/bloodcall',
                 data: $scope.bloodcall
             }).then(function successCallback(response) {
                 console.log(response);
@@ -51,6 +51,9 @@ angular.module('app.inputctrls', [])
              buttons: [
                { text: 'OK',
                 type: 'button-assertive',
+                onTap: function(e) {
+                    $window.location.reload();
+                }
                 },
              ]
            });
@@ -62,7 +65,7 @@ angular.module('app.inputctrls', [])
     }
 
 })
-.controller('inputNFCtrl', function($scope,$state,$http,$stateParams,localStorageService,$ionicPopup) {
+.controller('inputNFCtrl', function($scope,$state,$http,$stateParams,localStorageService,$ionicPopup,$window) {
 
     $scope.users_id = localStorageService.get('users_id');
 
@@ -86,7 +89,7 @@ angular.module('app.inputctrls', [])
         $scope.postNF = function() {
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/newsfeed',
+                url: 'http://128.199.188.36:3000/newsfeed',
                 data: $scope.newsfeed
             }).then(function successCallback(response) {
                 console.log(response);
@@ -115,6 +118,9 @@ angular.module('app.inputctrls', [])
          buttons: [
            { text: 'OK',
             type: 'button-assertive',
+            onTap: function(e) {
+                $window.location.reload();
+            }
             },
          ]
        });
@@ -124,7 +130,7 @@ angular.module('app.inputctrls', [])
       };
 
 })
-.controller('inputEVCtrl', function($scope,$state,$http,$stateParams,localStorageService,NgMap,$ionicPopup) {
+.controller('inputEVCtrl', function($scope,$state,$http,$stateParams,localStorageService,NgMap,$ionicPopup,$window) {
 
     var marker;
     var vm = this;
@@ -161,7 +167,7 @@ angular.module('app.inputctrls', [])
         $scope.postEV = function() {
             $http({
                 method: 'POST',
-                url: 'http://localhost:3000/event',
+                url: 'http://128.199.188.36:3000/event',
                 data: $scope.events
             }).then(function successCallback(response) {
                 console.log(response);
@@ -190,6 +196,9 @@ angular.module('app.inputctrls', [])
          buttons: [
            { text: 'OK',
             type: 'button-assertive',
+            onTap: function(e) {
+                $window.location.reload();
+            }
             },
          ]
        });

@@ -16,7 +16,7 @@ angular.module('app.itemctrls', [])
     }
 
     console.log($stateParams.bloodcall_id);
-    $scope.url_bc = "http://localhost:3000/bloodcall/" + $stateParams.bloodcall_id.toString() ;
+    $scope.url_bc = "http://128.199.188.36:3000/bloodcall/" + $stateParams.bloodcall_id.toString() ;
     $scope.getbc = function() {
         $http({
             method: 'GET',
@@ -40,8 +40,11 @@ angular.module('app.itemctrls', [])
         }
 
     }
-
     $scope.changeState();
+
+    $scope.editBC = function (bloodcall_id){
+        $state.go('editBC', {'bloodcall_id' : $stateParams.bloodcall_id});
+    }
 
 })
 .controller('NewsFeedCtrl', function($scope,$http,$stateParams,$state,localStorageService) {
@@ -58,9 +61,9 @@ angular.module('app.itemctrls', [])
             $scope.pemilik = false;
         }
     }
-
+    $scope.newsfeed = {};
     console.log($stateParams.newsfeed_id);
-    $scope.url_nf = "http://localhost:3000/newsfeed/" + $stateParams.newsfeed_id.toString() ;
+    $scope.url_nf = "http://128.199.188.36:3000/newsfeed/" + $stateParams.newsfeed_id.toString() ;
     console.log($scope.url_nf);
     $scope.getnf = function() {
         $http({
@@ -87,6 +90,9 @@ angular.module('app.itemctrls', [])
     }
 
     $scope.changeState();
+    $scope.editNF = function (newsfeed_id){
+        $state.go('editNF', {'newsfeed_id' : $stateParams.newsfeed_id});
+    }
 })
 .controller('EventCtrl',function($scope,$http,$stateParams,$state,localStorageService,NgMap){
 
@@ -103,7 +109,7 @@ angular.module('app.itemctrls', [])
     $scope.statuscheck = false;
 
     console.log($stateParams.event_id);
-    $scope.url_ev = "http://localhost:3000/event/" + $stateParams.event_id.toString() ;
+    $scope.url_ev = "http://128.199.188.36:3000/event/" + $stateParams.event_id.toString() ;
     console.log($scope.url_ev);
     $scope.getev = function() {
         $http({
@@ -143,5 +149,7 @@ angular.module('app.itemctrls', [])
         $scope.userlng = marker.getPosition().lng();
     });
 
-
+    $scope.editEV = function (event_id){
+        $state.go('editEV', {'event_id' : $stateParams.event_id});
+    }
 })
