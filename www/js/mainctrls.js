@@ -35,15 +35,41 @@ angular.module('app.mainctrls', [])
     }
 
 })
-.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope,localStorageService,$ionicPopup,$window) {
+.controller('menuCtrl', function($scope, $state,$stateParams,$http, $rootScope,localStorageService,$ionicPopup,$window,$cordovaLocalNotification) {
     // username
     $scope.tabcheck = 0 ;
 
+    $scope.refresh = function(){
+        $window.location.reload();
+    }
 
+    if (_.isNull(localStorageService.get('users_id'))) { $state.go('login'); } else {$state.go('menu.event');}
 
-    $scope.users_id = localStorageService.get('users_id');
     console.log('logged in');
-    console.log(localStorageService.get('users_id'));
+    console.log('userid',localStorageService.get('users_id'));
+
+    $scope.addnotif = function() {
+        var alarmTime = new Date();
+        alarmTime.setMinutes(alarmTime.getMinutes() + 1);
+        $cordovaLocalNotification.add({
+            id: "1234",
+            date: alarmTime,
+            message: "Check Blood Donation Events Now",
+            title: "You Are Ready To Donate!",
+            autoCancel: true,
+            sound: null
+        }).then(function () {
+            alert("Testing Notification Set");
+            // $scope.showPopup();
+            console.log("The notification has been set");
+        });
+    };
+
+    $scope.isScheduled = function() {
+       $cordovaLocalNotification.isScheduled("1234").then(function(isScheduled) {
+           alert("Notification 1234 Scheduled: " + isScheduled);
+       });
+   }
 
 
     $scope.getuser = function() {
@@ -73,15 +99,7 @@ angular.module('app.mainctrls', [])
 
 
 
-    $scope.changeState  = function(user_id) {
-        if ($scope.user_id == ''){
-            $state.go('login');
-        } else {
-            $state.go('menu.event');
-        }
 
-    }
-    $scope.changeState();
 
     $scope.editprof = function (){
         $state.go('profile', {'users_id' : $scope.user.users_id});
@@ -237,7 +255,7 @@ angular.module('app.mainctrls', [])
 
     }
 
-    $scope.changeState  = function(user_id) {
+    $scope.changeState  = function() {
         if ($scope.users_id == ''){
             $state.go('login');
         }

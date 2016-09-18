@@ -1,5 +1,5 @@
 angular.module('app.signupctrls', [])
-.controller('signupCtrl', function($scope,$state,$http) {
+.controller('signupCtrl', function($scope,$state,$http,$ionicPopup) {
 
 
     $scope.showPopup = function() {
@@ -50,7 +50,8 @@ angular.module('app.signupctrls', [])
             }).then(function successCallback(response) {
                 console.log(response);
                 console.log('SUCCESFULLY SIGNED UP');
-                $scope.showPopup();
+                // $scope.showPopup();
+                alert("Sign Up Success");
                 // response.data = $scope.signup ;
             }, function errorCallback(response) {
                 console.log('SIGNING UP FAILED');
@@ -118,7 +119,8 @@ angular.module('app.signupctrls', [])
             }).then(function successCallback(response) {
                 console.log(response);
                 console.log('SUCCESFULLY SIGNED UP');
-                $scope.showPopup();
+                // $scope.showPopup();
+                alert("Sign Up Success");
                 // response.data = $scope.signup ;
             }, function errorCallback(response) {
                 console.log('SIGNING UP FAILED');

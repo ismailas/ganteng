@@ -1,39 +1,42 @@
-<ion-view hide-nav-bar="true" title="Input Event" id="BloodCallpage" class=" ">
+<ion-view hide-nav-bar="true" title="Edit Event" id="BloodCallpage" class=" ">
     <ion-content padding="true" class="">
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
-                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+                <button class="button button-icon icon ion-arrow-left-b" ng-click="backEV()"></button>
             </div>
-            <h1 class="title">Input Event</h1>
+            <h1 class="title">Edit Event</h1>
+            <div class="buttons">
+                <button class="button button-icon icon ion-trash-a" ng-click="showPopup3()"></button>
+            </div>
         </ion-header-bar>
         <ion-content padding="true" class="has-header">
             <div class="cgff bccontainer">
                 <form class="" ng-submit="submitEV(evname,evorganizer,evaddress,evdate)">
                     <span class="input-label" style="width:100%;">Nama Kegiatan</span>
                     <label class="item item-input " >
-                        <input type="text" placeholder="" ng-model="evname">
+                        <input type="text" placeholder="" ng-model="events.evname">
                     </label>
                     <span class="input-label">Penyelenggara</span>
                     <label class="item item-input " >
-                        <input type="text" placeholder="" ng-model="evorganizer">
+                        <input type="text" placeholder="" ng-model="events.evorganizer">
                     </label>
                     <span class="input-label">Alamat</span>
                     <label class="item item-input " >
-                        <input type="text" placeholder="" ng-model="evaddress">
+                        <input type="text" placeholder="" ng-model="events.evaddress">
                     </label>
                     <span class="input-label">Waktu</span>
                     <label class="item item-input " >
-                        <input type="datetime-local" placeholder="" ng-model="evdate">
+                        <input type="datetime-local" placeholder="" ng-model="events.evdate">
                     </label>
                     <span class="input-label">Lokasi</span>
                     <span class="ketinput">Drag marker to event's place</span>
                     <ng-map class="evmap2" center="current" zoom="15">
-                    <marker position="current" draggable="true" title="Event Location "></marker>
+                    <marker position="{{events.evlat}} , {{events.evlng}}" draggable="true" title="Event Location "></marker>
 
                     </ng-map>
                     <div class="twinbutton">
                         <button id="su2next" class="sumarginbutton round brbutton submitbutton" type="submit" ng-click="getpos()">Save</button>
-                        <button ui-sref="menu" id="su2back" class="round brbutton backbutton">back</button>
+                        <button ng-click="backEV()" id="su2back" class="round brbutton backbutton">back</button>
                     </div>
                 </form>
             </div>

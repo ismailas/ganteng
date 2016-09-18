@@ -2,7 +2,7 @@
     <ion-content padding="true" class="cgff bakgr2">
         <div >
             <div id="brlogomenu" >
-                <img src="img/brmini.png" height="30px" style="display: inline;">
+                <img ng-src="img/brmini.png" height="30px" style="display: inline;" ng-click="refresh()">
             </div>
             <div id="btnlogoutsetting">
                 <button ng-show="!user.typeuser" ng-click="showPopup()" class="smallbrbutton2">Tes Notif</button>
@@ -15,7 +15,7 @@
         <div id="brprof" class="cgff " >
                 <!-- foto profil -->
                 <div id="pprofil" ui-sref="profile" class="round">
-                    <img id="imgprofil"  src={{foto}}>
+                    <img id="imgprofil"  ng-src={{foto}}>
                 </div>
             <!-- </div> -->
             <div id="profilproperties" class="">
@@ -33,14 +33,14 @@
                         <p class="ketproperties">{{ statuscheck ? 'Ready' : remaining }}{{ !statuscheck ? ' days left' : '' }}</p>
                     </div>
                     <!-- jumlah donasi -->
-                    <div class="pproperties">
+                    <div class="pproperties" ui-sref="Histori">
                         <div class="cgff pprop round" >
                             {{user.jumdon}}
                         </div>
                         <p class="ketproperties">Donation</p>
                     </div>
                     <!-- golongan darah -->
-                    <div class="pproperties">
+                    <div class="pproperties" ng-click="statuscheck=!statuscheck">
                         <div  class="cgff pprop round">
                             {{user.goldar}}
                         </div>

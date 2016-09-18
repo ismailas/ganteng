@@ -201,7 +201,7 @@ angular.module('app.routes', [])
         controller: 'FeedbackCtrl'
     })
 
-    $urlRouterProvider.otherwise('/loginpage')
+    $urlRouterProvider.otherwise('/menu')
 
 
 

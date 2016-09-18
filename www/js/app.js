@@ -19,6 +19,7 @@ angular.module('app', [
                         'app.services',
                         'app.directives',
                         'ngMap',
+                        'ngCordova',
                         'ionic-native-transitions',
                         'LocalStorageModule'
                     ])

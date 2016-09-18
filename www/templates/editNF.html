@@ -1,30 +1,33 @@
-<ion-view hide-nav-bar="true" title="Input News" id="BloodCallpage" class=" ">
+<ion-view hide-nav-bar="true" title="Edit News" id="BloodCallpage" class=" ">
     <ion-content padding="true" class="">
         <ion-header-bar align-title="center" class="bar-assertive">
             <div class="buttons">
-                <button ui-sref="menu" class="button button-icon icon ion-arrow-left-b" ng-click="doSomething()"></button>
+                <button class="button button-icon icon ion-arrow-left-b" ng-click="backNF()"></button>
             </div>
-            <h1 class="title">Input News</h1>
+            <h1 class="title">Edit News</h1>
+            <div class="buttons">
+                <button class="button button-icon icon ion-trash-a" ng-click="showPopup3()"></button>
+            </div>
         </ion-header-bar>
         <ion-content padding="true" class="has-header">
             <div class="cgff bccontainer">
-                <form class="" ng-submit="submitNF(nfjudul,nfimage,nfcontent)">
+                <form class="" ng-submit="submitNF()">
                     <span class="input-label">Judul</span>
                     <label class="item item-input " >
-                        <input type="text" placeholder="" ng-model="nfjudul">
+                        <input type="text" placeholder="" ng-model="newsfeed.nfjudul">
                     </label>
                     <span class="input-label">Gambar</span>
                     <label class="item item-input " >
-                        <input type="text" placeholder="" ng-model="nfimage">
+                        <input type="text" placeholder="" ng-model="newsfeed.nfimage">
                     </label>
                     <span class="input-label">Konten</span>
                     <label class="item " >
-                        <textarea style="width:100%; height:150px;" name="nfcontent" placeholder="konten berita" ng-model="nfcontent"></textarea>
+                        <textarea style="width:100%; height:150px;" name="nfcontent" placeholder="konten berita" ng-model="newsfeed.nfcontent"></textarea>
                         <!-- <input style="height:200px;" type="text" placeholder="" ng-model="bcketerangan"> -->
                     </label>
                     <div class="twinbutton">
                         <button id="su2next" class="sumarginbutton round brbutton submitbutton" type="submit">Save</button>
-                        <button ui-sref="menu" id="su2back" class="round brbutton backbutton">back</button>
+                        <button ng-click="backNF()" id="su2back" class="round brbutton backbutton">back</button>
                     </div>
                 </form>
             </div>
